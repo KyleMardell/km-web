@@ -1,13 +1,18 @@
 import { Container, Row, Col } from "react-bootstrap";
+import FontWaveAnim from "./animations/FontWaveAnim";
 import styles from "./page.module.css";
 
 export default function Home() {
     return (
         <Container>
-            <Row>
+            <Row className="my-5 text-center">
                 <Col>
                     <h1>Kyle Mardell Web Studio</h1>
-                    <p>Websites built around your business</p>
+                    <FontWaveAnim text="Websites built around your business" base="14px" active="20px" />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <p>
                         I help businesses get online (or level up what they
                         already have) with websites that are designed around who
