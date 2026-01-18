@@ -1,30 +1,32 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
+import PageFooter from "./components/PageFooter";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "Kyle Mardell Web Studio",
-  description: "Custom website for small businesses",
+    title: "Kyle Mardell Web Studio",
+    description: "Custom website for small businesses",
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NavBar />
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${geistSans.variable} ${geistMono.variable}`}>
+                <NavBar />
+                <main>{children}</main>
+                <PageFooter />
+            </body>
+        </html>
+    );
 }
