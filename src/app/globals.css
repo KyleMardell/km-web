@@ -7,7 +7,7 @@
 }
 
 :root {
-    --background: #ffffff;
+    --background: #ececec;
     --foreground: #171717;
 }
 
@@ -31,6 +31,7 @@ main {
     width: 100%;
     flex: 1;
     padding-top: 56px; /* navbar height */
+    background-color: var(--background);
 }
 
 h1,
