@@ -1,6 +1,7 @@
 .NavBar {
     box-shadow: 3px 2px 5px #161E54;
     background: linear-gradient(45deg, #ececec, #fafafa);
+    font-family: var(--font-heading);
 }
 
 .DropIcon {

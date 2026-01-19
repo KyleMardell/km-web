@@ -9,7 +9,7 @@ const FontWaveAnim = ({ text, base, active }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % letters.length);
-        }, 120);
+        }, 125);
 
         return () => clearInterval(interval);
     }, [letters.length]);

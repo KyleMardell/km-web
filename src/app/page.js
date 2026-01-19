@@ -4,24 +4,27 @@ import styles from "./page.module.css";
 
 export default function Home() {
     return (
-        <Container>
+        <Container className="px-3">
             <Row className="my-5 text-center">
                 <Col>
                     <h1>Kyle Mardell Web Studio</h1>
-                    <FontWaveAnim text="Websites built around your business" base="14px" active="20px" />
+                    <FontWaveAnim text="Websites built around your business" base="18px" active="22px" />
                 </Col>
             </Row>
-            <Row>
+            <Row className="my-5">
                 <Col>
                     <p>
                         I help businesses get online (or level up what they
-                        already have) with websites that are designed around who
-                        they are and what they need. Whether that's something
+                        already have) with websites designed around who
+                        they are and what they need.
+                    </p>
+                    <p className="text-end">
+                        Whether that's something
                         clean and straightforward or something more modern and
-                        expressive, I'll build a site that fits your business,
+                        expressive, I'll build a site that fits your business,<br />
                         and handle everything technical along the way.
                     </p>
-                    <p>
+                    <p className="text-center">
                         Custom websites - Designed to look right, work properly,
                         and grow with you.
                     </p>
