@@ -1,3 +1,27 @@
+.HeroLeftText {
+    padding: 5px 5px 5px 10px;
+    border-left: 6px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #4988c4, #bde8f5, #ececec) 1;
+}
+
+.HeroRightText {
+    padding: 5px 10px 5px 5px;
+    border-right: 6px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to left, #4988c4, #bde8f5, #ececec) 1;
+}
+
+.HeroCenterText {
+    padding: 5px;
+    border-left: 6px solid;
+    border-right: 6px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #4988c4, #bde8f5, #ececec, #bde8f5, #4988c4) 1;
+}
 
 @media (max-width: 768px) {
     
