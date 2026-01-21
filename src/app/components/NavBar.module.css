@@ -1,10 +1,15 @@
 .NavBar {
-    box-shadow: 3px 2px 5px #161E54;
+    box-shadow: 3px 2px 5px gray;
     background: linear-gradient(45deg, #ececec, #fafafa);
     font-family: var(--font-heading);
 }
 
 .DropIcon {
-    box-shadow: 1px 1px 2px #161E54;
-    border-color: #161E54;
+    box-shadow: 1px 1px 2px gray;
+    border-color: black;
+}
+
+.Brand {
+    font-weight: 800;
+    text-shadow: 2px 2px 2px lightgray;
 }

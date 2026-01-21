@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "./page.module.css";
-import FontWaveAnim from "./animations/FontWaveAnim";
 import HeroSection from "./components/HeroSection";
 
 export default function Home() {

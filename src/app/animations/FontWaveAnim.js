@@ -33,7 +33,9 @@ const FontWaveAnim = ({ text, base, active }) => {
                     key={index}
                     style={{
                         display: "inline-block",
+                        fontWeight: 600,
                         fontSize: isActive(index) ? active : base,
+                        textShadow: "2px 2px 2px lightgray",
                         lineHeight: active,
                         verticalAlign: "middle",
                         transition: "font-size 0.25s ease",
