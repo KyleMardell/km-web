@@ -27,6 +27,7 @@ const FontWaveAnim = ({ text, base, active }) => {
                 display: "inline-block",
                 whiteSpace: "nowrap",
                 lineHeight: active,
+                height: 25,
             }}>
             {letters.map((char, index) => (
                 <span
