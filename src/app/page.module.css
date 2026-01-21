@@ -1,4 +1,19 @@
+.firstSection {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    background: var(--background);
+    margin-top: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.subSection {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    background: var(--background);
+}
 
 @media (max-width: 768px) {
-    
 }

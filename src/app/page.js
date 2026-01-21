@@ -6,29 +6,28 @@ export default function Home() {
     return (
         <>
             <HeroSection />
-
-            <Container
-                className="px-3"
-                style={{ marginTop: "100vh", position: "relative", zIndex: 2 }}>
-                <Row className="my-5">
-                    <Col>
-                        <p className={`my-3`}>
+            <Container className={styles.firstSection}>
+                <Row>
+                    <Col className="px-3">
+                        <p>
                             I help businesses get online (or level up what they
                             already have) with websites designed around who they
                             are and what they need.
                         </p>
-                        <p className={`text-end my-4`}>
+                        <p className={`text-end my-5`}>
                             Whether that's something clean and straightforward
                             or something more modern and expressive, I'll build
                             a site that fits your business, and handle
                             everything technical along the way.
                         </p>
-                        <p className={`text-center mt-4`}>
+                        <p className={`text-center`}>
                             Custom websites - Designed to look right, work
                             properly, and grow with you.
                         </p>
                     </Col>
                 </Row>
+            </Container>
+            <Container className={styles.subSection}>
                 <Row>
                     <Col>
                         <h2 className="text-center mb-4">What I Do</h2>
@@ -69,6 +68,8 @@ export default function Home() {
                         </p>
                     </Col>
                 </Row>
+            </Container>
+            <Container className={styles.subSection}>
                 <Row>
                     <Col>
                         <h2>Who I Work With</h2>
@@ -92,6 +93,8 @@ export default function Home() {
                         </p>
                     </Col>
                 </Row>
+            </Container>
+            <Container className={styles.subSection}>
                 <Row>
                     <Col>
                         <h2>Example Websites</h2>
@@ -117,6 +120,8 @@ export default function Home() {
                         </p>
                     </Col>
                 </Row>
+            </Container>
+            <Container className={styles.subSection}>
                 <Row>
                     <Col>
                         <h2>About Me</h2>
@@ -147,6 +152,8 @@ export default function Home() {
                         </p>
                     </Col>
                 </Row>
+            </Container>
+            <Container className={styles.subSection}>
                 <Row>
                     <Col>
                         <h2>How It Works</h2>
@@ -186,6 +193,8 @@ export default function Home() {
                         </p>
                     </Col>
                 </Row>
+            </Container>
+            <Container className={styles.subSection}>
                 <Row>
                     <p>
                         If you're thinking about getting a website, improving

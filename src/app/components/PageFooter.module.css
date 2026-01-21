@@ -1,3 +1,4 @@
 .PageFooter {
-    background: linear-gradient(45deg, #fafafa, #ececec);
+    background: #ececec;
+    z-index: 2;
 }
