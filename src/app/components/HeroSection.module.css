@@ -34,7 +34,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(235, 235, 235, 0.7);
+    background: rgba(252, 248, 248, 0.85);
 }
 
 @media (max-width: 2220px) {

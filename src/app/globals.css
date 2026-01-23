@@ -7,7 +7,7 @@
 }
 
 :root {
-    --background: #ececec;
+    --background: #FCF8F8;
     --foreground: #171717;
     --font-body: system-ui, sans-serif;
     --font-heading: system-ui, sans-serif;
@@ -31,6 +31,7 @@ body {
 
 main {
     width: 100%;
+    max-width: 100vw;
     flex: 1;
     padding-top: 56px; /* navbar height */
     background-color: var(--background);

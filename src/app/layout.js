@@ -1,6 +1,7 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
+import "aos/dist/aos.css"; 
 import NavBar from "./components/NavBar";
 import PageFooter from "./components/PageFooter";
 

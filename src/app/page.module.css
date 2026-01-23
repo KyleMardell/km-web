@@ -7,20 +7,39 @@
     align-items: center;
 }
 
-.subSection {
+.subSectionPurple {
     position: relative;
     z-index: 2;
     min-height: 100vh;
-    background: var(--background);
+    background: linear-gradient(
+        transparent,
+        rgba(229, 224, 255, 0.2) 10%,
+        rgba(229, 224, 255, 0.2) 90%,
+        transparent
+    );
     display: flex;
     align-items: center;
 }
 
-.subTransparentSection {
+.subSectionBlue {
     position: relative;
     z-index: 2;
     min-height: 100vh;
-    background: rgba(125, 125, 125, 0.5);
+    background: linear-gradient(
+        transparent,
+        rgba(142, 167, 233, 0.2) 10%,
+        rgba(142, 167, 233, 0.2) 90%,
+        transparent
+    );
+    display: flex;
+    align-items: center;
+}
+
+.subSectionTransparent {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    background: transparent;
     display: flex;
     align-items: center;
 }
@@ -40,8 +59,9 @@
 }
 
 .ThinBorder {
-    border: 1px solid black;
+    border: 1px solid #7286d3;
     border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(142, 167, 233, 0.8);
     margin: 0 150px 0 150px;
     padding: 35px 30px 35px 30px;
 }
