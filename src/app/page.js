@@ -6,6 +6,7 @@ import AOSWrapper from "./aos/AOSWrapper";
 import HeroSection from "./components/HeroSection";
 import FontWaveAnim from "./animations/FontWaveAnim";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -43,57 +44,72 @@ export default function Home() {
 
                 <Row className={styles.subSectionTransparent}>
                     <Col className={`${styles.ThinBorder}`}>
-                        <div data-aos="flip-left">
+                        <div data-aos="fade-right">
                             <p>
-                                I help businesses get online (or level up what
-                                they already have) with websites designed around
-                                who they are and what they need.
+                                <strong>I help businesses get online</strong>{" "}
+                                (or level up what they already have) with
+                                websites designed around who they are and what
+                                they need.
                             </p>
                         </div>
-                        <div data-aos="flip-right">
+                        <div data-aos="fade-left">
                             <p className={`text-end my-5`}>
                                 Whether that's something clean and
                                 straightforward or something more modern and
-                                expressive, I'll build a site that fits your
-                                business, and handle everything technical along
-                                the way.
+                                expressive,{" "}
+                                <strong>
+                                    I'll build a site that fits your business,
+                                </strong>{" "}
+                                and handle everything technical along the way.
                             </p>
                         </div>
                         <div data-aos="fade-up">
                             <p className={`text-center`}>
-                                Custom websites - Designed to look right, work
-                                properly, and grow with you.
+                                <strong>
+                                    Custom websites - Designed to look right,
+                                    work properly, and grow with you.
+                                </strong>
                             </p>
                         </div>
+                    </Col>   
+                </Row>
+                <Row className={styles.subSectionTransparentSmall}>
+                    <Col className="text-center">
+                        <Link href="/" className={styles.CtaButton}><strong>Get In Touch</strong></Link>
                     </Col>
                 </Row>
 
-                <Row className={`${styles.subSectionBlue}`}>
+                <Row className={`${styles.subSectionBlueTop} py-5`}>
                     <Col>
                         <h2 className="text-center my-5">What I Do</h2>
-                        <Row className="px-2">
+                        <Row className="px-2 px-md-5">
                             <Col xs={10}>
-                                <p>
-                                    I design and build custom websites for small
-                                    businesses, handling the full process from
-                                    start to finish.
+                                <p
+                                    className={`${styles.ThinBorderSecond}`}
+                                    data-aos="flip-left">
+                                    I design and build custom websites, handling
+                                    the full process from start to finish.
                                 </p>
                             </Col>
                             <Col xs={2}></Col>
                         </Row>
-                        <Row className="px-2 my-4">
+                        <Row className="px-2 my-4 px-md-5">
                             <Col xs={2}></Col>
                             <Col xs={10}>
-                                <p>
+                                <p
+                                    className={`${styles.ThinBorderSecond}`}
+                                    data-aos="flip-right">
                                     A lot of business owners know they need a
                                     website but aren't sure where to start, what
                                     they actually need, or how any of it works.
                                 </p>
                             </Col>
                         </Row>
-                        <Row className="px-2">
+                        <Row className="px-2 px-md-5">
                             <Col xs={10}>
-                                <p>
+                                <p
+                                    className={`${styles.ThinBorderSecond}`}
+                                    data-aos="flip-left">
                                     That's where I come in. I take care of the
                                     setup, hosting, deployment, and ongoing
                                     support, so you can focus on running your
@@ -105,27 +121,29 @@ export default function Home() {
                     </Col>
                 </Row>
 
-                <Row className={`${styles.subSectionTransparent}`}>
-                    <Col>
-                        <p>
-                            Every site I build is designed specifically for the
-                            business, not pulled from a template
+                <Row className={`${styles.subSectionPurpleMid}`}>
+                    <Col className="px-3 px-md-5">
+                        <p className="my-5 text-center">
+                            <strong>
+                                Every site I build is designed specifically for
+                                the business.
+                            </strong>
                         </p>
                         <ul>
-                            <li>
-                                Fully responsive and works properly on phones,
-                                tablets, and desktops
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Fully responsive</strong> and works
+                                properly on phones, tablets, and desktops
                             </li>
-                            <li>
-                                Built with performance and search visibility in
-                                mind
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Built with performance</strong> and
+                                search visibility in mind
                             </li>
-                            <li>
-                                Designed to last, with room to grow with your
-                                business
+                            <li data-aos="fade-left">
+                                <strong>Designed to last</strong>, with room to
+                                grow with your business
                             </li>
                         </ul>
-                        <p>
+                        <p className="my-5" data-aos="zoom-in-up">
                             The goal isn't just to “have a website” — it's to
                             have one that feels right for your business and
                             works for the people using it.
@@ -133,32 +151,39 @@ export default function Home() {
                     </Col>
                 </Row>
 
-                <Row className={styles.subSectionPurple}>
-                    <Col>
+                <Row className={styles.subSectionBlueBottom}>
+                    <Col className="px-3 px-md-5">
                         <h2 className="text-center my-5">Who I Work With</h2>
-                        <p>
+                        <p className="my-5">
                             I mainly work with small and local businesses,
                             including:
                         </p>
                         <ul>
-                            <li>Tradespeople</li>
-                            <li>Cafés and independent shops</li>
-                            <li>Community groups and villages</li>
-                            <li>
-                                Businesses with no website, or one that no
-                                longer reflects them
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Tradespeople</strong>
+                            </li>
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Cafés and independent shops</strong>
+                            </li>
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Community groups and villages</strong>
+                            </li>
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Businesses with no website,</strong> or
+                                one that no longer reflects them
                             </li>
                         </ul>
-                        <p>
-                            That said, the approach is always the same:
-                            understand the business first, then design something
-                            that fits. No one-size-fits-all solutions.
+                        <p className="my-5" data-aos="zoom-in-up">
+                            That said, the approach is always the same, 
+                            <strong> understand the business first</strong>, then
+                            design something that fits. <strong>No one-size-fits-all
+                            solutions.</strong>
                         </p>
                     </Col>
                 </Row>
 
                 <Row className={styles.subSectionTransparent}>
-                    <Col>
+                    <Col className="px-3 px-md-5">
                         <h2 className="text-center my-5">Example Websites</h2>
                         <p>
                             Below are some example websites that show the kind
@@ -183,21 +208,21 @@ export default function Home() {
                     </Col>
                 </Row>
 
-                <Row className={styles.subSectionBlue}>
-                    <Col>
-                        <h2 className="text-center my-5">About Me</h2>
-                        <p>
+                <Row className={styles.subSectionBlueTop}>
+                    <h2 className="text-center my-5">About Me</h2>
+                    <Col className={`${styles.ThinBorder}`}>
+                        <p className="m-1" data-aos="zoom-in-right">
                             I started doing this because I wanted to help local
                             businesses build better online presences.
                         </p>
-                        <p>
+                        <p className="m-1 text-end" data-aos="zoom-in-left">
                             I've seen plenty of businesses with websites that
                             don't really represent them or no website at all,
                             and thought, this could be so much better. Not just
                             visually, but in how it works and how people
                             experience it.
                         </p>
-                        <p>
+                        <p className="m-1" data-aos="zoom-in-right">
                             Good websites today need to be intuitive, easy to
                             navigate, and suited to the type of business they
                             represent. Some businesses benefit from clean,
@@ -206,65 +231,71 @@ export default function Home() {
                             working across that spectrum and choosing what
                             actually makes sense for each project.
                         </p>
-                        <p>
+                        <p className="m-1 text-center" data-aos="zoom-in-left">
                             I want local businesses to have a website they feel
-                            confident sharing — and a local person they can
-                            trust to build and support it.
+                            confident sharing and a local person they can trust
+                            to build and support it.
                         </p>
                     </Col>
                 </Row>
 
-                <Row className={styles.subSectionTransparent}>
-                    <Col>
+                <Row className={styles.subSectionPurpleBottom}>
+                    <Col className="py-5 px-3 px-md-5">
                         <h2 className="text-center my-5">How It Works</h2>
-                        <p>
-                            I keep the process clear and collaborative, without
-                            over complicating things.
+                        <p className="my-5">
+                            <strong>
+                                I keep the process clear and collaborative,
+                                without over complicating things.
+                            </strong>
                         </p>
                         <ol>
-                            <li>
-                                Initial chat & planning <br />
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Initial chat & planning</strong> <br />
                                 We talk through your business, your goals, and
                                 what the website needs to do. I'll then provide
                                 a clear quote.
                             </li>
-                            <li>
-                                Content & design direction <br />
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Content & design direction</strong>{" "}
+                                <br />
                                 You'll get a Google Drive folder to upload
                                 logos, images, and content. You can choose
                                 colours and fonts, or I can suggest options that
                                 fit your brand.
                             </li>
-                            <li>
-                                Design & review <br />I design the homepage
-                                first so we can lock in the look and feel before
-                                building the rest of the site.
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Design & review</strong> <br />I design
+                                the homepage first so we can lock in the look
+                                and feel before building the rest of the site.
                             </li>
-                            <li>
-                                Build, refine & launch <br />
+                            <li className="mb-3" data-aos="fade-left">
+                                <strong>Build, refine & launch</strong> <br />
                                 Once everything's approved, I build the full
                                 site, make final tweaks, and deploy it. I also
                                 handle hosting, domains, and ongoing support.
                             </li>
                         </ol>
-                        <p>
-                            You're involved where it matters, but you're never
-                            expected to deal with the technical side.
+                        <p className="my-5">
+                            <strong>You're involved where it matters</strong>,
+                            but you're never expected to deal with the technical
+                            side.
                         </p>
                     </Col>
                 </Row>
 
                 <Row className={styles.subSectionTransparent}>
-                    <Col className={`${styles.ThinBorder}`}>
+                    <Col
+                        className={`${styles.ThinBorder}`}
+                        data-aos="flip-down">
                         <p>
-                            If you're thinking about getting a website,
+                            <strong>If you're thinking about getting a website</strong>,
                             improving the one you already have or just want
                             someone who'll explain things clearly and build
-                            something that actually suits your business, I'd be
-                            happy to chat
+                            something that actually suits your business, <strong>I'd be
+                            happy to chat</strong>
                         </p>
                         <p className="text-end mt-4">
-                            No pressure, no hard sell — just a conversation
+                            <strong>No pressure, no hard sell</strong>, just a conversation
                             about what you need and what would work best for
                             your business.
                         </p>
