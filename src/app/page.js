@@ -7,6 +7,9 @@ import HeroSection from "./components/HeroSection";
 import FontWaveAnim from "./animations/FontWaveAnim";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import pic1 from "../../public/images/laptopweb.jpg";
+import pic2 from "../../public/images/workstations.jpg";
 
 export default function Home() {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -71,52 +74,69 @@ export default function Home() {
                                 </strong>
                             </p>
                         </div>
-                    </Col>   
+                    </Col>
                 </Row>
                 <Row className={styles.subSectionTransparentSmall}>
                     <Col className="text-center">
-                        <Link href="/" className={styles.CtaButton}><strong>Get In Touch</strong></Link>
+                        <Link href="/" className={styles.CtaButton}>
+                            <strong>Get In Touch</strong>
+                        </Link>
                     </Col>
                 </Row>
 
                 <Row className={`${styles.subSectionBlueTop} py-5`}>
                     <Col>
-                        <h2 className="text-center my-5">What I Do</h2>
-                        <Row className="px-2 px-md-5">
-                            <Col xs={10}>
-                                <p
-                                    className={`${styles.ThinBorderSecond}`}
-                                    data-aos="flip-left">
-                                    I design and build custom websites, handling
-                                    the full process from start to finish.
-                                </p>
+                        <Row>
+                            <Col>
+                                <h2 className="text-center my-5">What I Do</h2>
+                                <Row className="px-2 px-md-5">
+                                    <Col xs={10}>
+                                        <p
+                                            className={`${styles.ThinBorderSecond}`}
+                                            data-aos="flip-left">
+                                            I design and build custom websites,
+                                            handling the full process from start
+                                            to finish.
+                                        </p>
+                                    </Col>
+                                    <Col xs={2}></Col>
+                                </Row>
+                                <Row className="px-2 my-4 px-md-5">
+                                    <Col xs={2}></Col>
+                                    <Col xs={10}>
+                                        <p
+                                            className={`${styles.ThinBorderSecond}`}
+                                            data-aos="flip-right">
+                                            A lot of business owners know they
+                                            need a website but aren't sure where
+                                            to start, what they actually need,
+                                            or how any of it works.
+                                        </p>
+                                    </Col>
+                                </Row>
+                                <Row className="px-2 px-md-5">
+                                    <Col xs={10}>
+                                        <p
+                                            className={`${styles.ThinBorderSecond}`}
+                                            data-aos="flip-left">
+                                            That's where I come in. I take care
+                                            of the setup, hosting, deployment,
+                                            and ongoing support, so you can
+                                            focus on running your business.
+                                        </p>
+                                    </Col>
+                                    <Col xs={2}></Col>
+                                </Row>
                             </Col>
-                            <Col xs={2}></Col>
                         </Row>
-                        <Row className="px-2 my-4 px-md-5">
-                            <Col xs={2}></Col>
-                            <Col xs={10}>
-                                <p
-                                    className={`${styles.ThinBorderSecond}`}
-                                    data-aos="flip-right">
-                                    A lot of business owners know they need a
-                                    website but aren't sure where to start, what
-                                    they actually need, or how any of it works.
-                                </p>
+                        <Row className="my-5 py-5">
+                            <Col>
+                                <Image
+                                    src={pic1}
+                                    alt="A laptop with a website on it"
+                                    className={styles.inlineImage}
+                                />
                             </Col>
-                        </Row>
-                        <Row className="px-2 px-md-5">
-                            <Col xs={10}>
-                                <p
-                                    className={`${styles.ThinBorderSecond}`}
-                                    data-aos="flip-left">
-                                    That's where I come in. I take care of the
-                                    setup, hosting, deployment, and ongoing
-                                    support, so you can focus on running your
-                                    business.
-                                </p>
-                            </Col>
-                            <Col xs={2}></Col>
                         </Row>
                     </Col>
                 </Row>
@@ -152,33 +172,59 @@ export default function Home() {
                 </Row>
 
                 <Row className={styles.subSectionBlueBottom}>
-                    <Col className="px-3 px-md-5">
-                        <h2 className="text-center my-5">Who I Work With</h2>
-                        <p className="my-5">
-                            I mainly work with small and local businesses,
-                            including:
-                        </p>
-                        <ul>
-                            <li className="mb-3" data-aos="fade-left">
-                                <strong>Tradespeople</strong>
-                            </li>
-                            <li className="mb-3" data-aos="fade-left">
-                                <strong>Cafés and independent shops</strong>
-                            </li>
-                            <li className="mb-3" data-aos="fade-left">
-                                <strong>Community groups and villages</strong>
-                            </li>
-                            <li className="mb-3" data-aos="fade-left">
-                                <strong>Businesses with no website,</strong> or
-                                one that no longer reflects them
-                            </li>
-                        </ul>
-                        <p className="my-5" data-aos="zoom-in-up">
-                            That said, the approach is always the same, 
-                            <strong> understand the business first</strong>, then
-                            design something that fits. <strong>No one-size-fits-all
-                            solutions.</strong>
-                        </p>
+                    <Col>
+                        <Row>
+                            <Col className="px-3 px-md-5">
+                                <h2 className="text-center my-5">
+                                    Who I Work With
+                                </h2>
+                                <p className="my-5">
+                                    I mainly work with small and local
+                                    businesses, including:
+                                </p>
+                                <ul>
+                                    <li className="mb-3" data-aos="fade-left">
+                                        <strong>Tradespeople</strong>
+                                    </li>
+                                    <li className="mb-3" data-aos="fade-left">
+                                        <strong>
+                                            Cafés and independent shops
+                                        </strong>
+                                    </li>
+                                    <li className="mb-3" data-aos="fade-left">
+                                        <strong>
+                                            Community groups and villages
+                                        </strong>
+                                    </li>
+                                    <li className="mb-3" data-aos="fade-left">
+                                        <strong>
+                                            Businesses with no website,
+                                        </strong>{" "}
+                                        or one that no longer reflects them
+                                    </li>
+                                </ul>
+                                <p className="my-5" data-aos="zoom-in-up">
+                                    That said, the approach is always the same,
+                                    <strong>
+                                        {" "}
+                                        understand the business first
+                                    </strong>
+                                    , then design something that fits.{" "}
+                                    <strong>
+                                        No one-size-fits-all solutions.
+                                    </strong>
+                                </p>
+                            </Col>
+                        </Row>
+                        <Row className="my-5 py-5">
+                            <Col>
+                                <Image
+                                    src={pic2}
+                                    alt="A laptop at a workstation"
+                                    className={styles.inlineImage}
+                                />
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
 
@@ -288,16 +334,18 @@ export default function Home() {
                         className={`${styles.ThinBorder}`}
                         data-aos="flip-down">
                         <p>
-                            <strong>If you're thinking about getting a website</strong>,
-                            improving the one you already have or just want
+                            <strong>
+                                If you're thinking about getting a website
+                            </strong>
+                            , improving the one you already have or just want
                             someone who'll explain things clearly and build
-                            something that actually suits your business, <strong>I'd be
-                            happy to chat</strong>
+                            something that actually suits your business,{" "}
+                            <strong>I'd be happy to chat</strong>
                         </p>
                         <p className="text-end mt-4">
-                            <strong>No pressure, no hard sell</strong>, just a conversation
-                            about what you need and what would work best for
-                            your business.
+                            <strong>No pressure, no hard sell</strong>, just a
+                            conversation about what you need and what would work
+                            best for your business.
                         </p>
                     </Col>
                 </Row>
