@@ -1,0 +1,14 @@
+.firstSection {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+.subSectionTransparent {
+    position: relative;
+    z-index: 2;
+    min-height: 50vh;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}

@@ -1,17 +1,19 @@
 "use client";
 
 import { Container, Row, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
 import styles from "./page.module.css";
 import AOSWrapper from "./aos/AOSWrapper";
 import HeroSection from "./components/HeroSection";
 import FontWaveAnim from "./animations/FontWaveAnim";
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import pic1 from "../../public/images/laptopweb.jpg";
-import pic2 from "../../public/images/responsivedesign.png";
-import pic3 from "../../public/images/laptopclose.jpg";
-import pic4 from "../../public/images/constructlaptop.jpg";
+
+import laptopWebImg from "../../public/images/laptopweb.jpg";
+import responsiveImg from "../../public/images/responsivedesign.png";
+import laptopCloseImg from "../../public/images/laptopclose.jpg";
+import constructionLaptopImg from "../../public/images/constructlaptop.jpg";
 
 export default function Home() {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -143,7 +145,7 @@ export default function Home() {
                         <Row className="my-5 py-5">
                             <Col className="d-flex justify-content-center">
                                 <Image
-                                    src={pic1}
+                                    src={laptopWebImg}
                                     alt="A laptop with a website on it"
                                     className={styles.inlineImage}
                                 />
@@ -187,7 +189,7 @@ export default function Home() {
                         <Row className="my-3 pb-5">
                             <Col className="d-flex justify-content-center">
                                 <Image
-                                    src={pic2}
+                                    src={responsiveImg}
                                     alt="A laptop, tablet and phone showing the same website"
                                     className={styles.inlineImage}
                                 />
@@ -244,7 +246,7 @@ export default function Home() {
                         <Row className="my-5 py-5">
                             <Col className="d-flex justify-content-center">
                                 <Image
-                                    src={pic3}
+                                    src={laptopCloseImg}
                                     alt="A laptop, phone and notebook on a desk"
                                     className={styles.inlineImage}
                                 />
@@ -386,7 +388,7 @@ export default function Home() {
                         <Row className="my-5">
                             <Col className="d-flex justify-content-center">
                                 <Image
-                                    src={pic4}
+                                    src={constructionLaptopImg}
                                     alt="A laptop with a small, under construction sign, on the keyboard"
                                     className={styles.inlineImage}
                                 />
