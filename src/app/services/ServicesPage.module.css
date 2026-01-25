@@ -15,6 +15,62 @@
     justify-content: center;
 }
 
+.subSectionBlueTop {
+    position: relative;
+    z-index: 2;
+    min-height: 50vh;
+    background: linear-gradient(
+        transparent,
+        rgba(142, 167, 233, 0.2) 10%,
+        rgba(142, 167, 233, 0.2) 100%
+    );
+    display: flex;
+    align-items: center;
+    padding: 50px 0 50px 0;
+}
+
+.subSectionBlueBottom {
+    position: relative;
+    z-index: 2;
+    min-height: 50vh;
+    background: linear-gradient(
+        rgba(142, 167, 233, 0.2),
+        rgba(142, 167, 233, 0.2) 90%,
+        transparent
+    );
+    display: flex;
+    align-items: center;
+    padding: 50px 0 50px 0;
+}
+
+.subSectionPurpleMid {
+    position: relative;
+    z-index: 2;
+    min-height: 50vh;
+    background: linear-gradient(
+        rgba(142, 167, 233, 0.2),
+        rgba(229, 224, 255, 0.2) 10%,
+        rgba(229, 224, 255, 0.2) 90%,
+        rgba(142, 167, 233, 0.2) 100%
+    );
+    display: flex;
+    align-items: center;
+}
+
+.subSectionPurpleBottom {
+    position: relative;
+    z-index: 2;
+    min-height: 50vh;
+    background: linear-gradient(
+        rgba(142, 167, 233, 0.2),
+        rgba(229, 224, 255, 0.2) 10%,
+        rgba(229, 224, 255, 0.2) 90%,
+        transparent
+    );
+    display: flex;
+    align-items: center;
+}
+
 .ThinBorder {
     border: 1px solid rgba(142, 167, 233, 0.6);
     border-radius: 20px;

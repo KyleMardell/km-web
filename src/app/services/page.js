@@ -22,14 +22,14 @@ const ServicesPage = () => {
                                 <p>
                                     I offer{" "}
                                     <strong>
-                                        end-to-end website services for small
+                                        end-to-end website services for 
                                         businesses
                                     </strong>{" "}
                                     and individuals — from design and build, to
                                     hosting and domains, through to ongoing
                                     updates and improvements.
                                 </p>
-                                <p>
+                                <p className="my-1">
                                     Whether you know exactly what you want or
                                     just have a rough idea, I'll work with you
                                     to create a{" "}
@@ -44,7 +44,7 @@ const ServicesPage = () => {
                         </Row>
                     </Col>
                 </Row>
-                <Row className={`${styles.subSectionTransparent}`}>
+                <Row className={`${styles.subSectionBlueTop}`}>
                     <Col className="px-md-5">
                         <Row className="text-center my-5">
                             <Col>
@@ -53,7 +53,7 @@ const ServicesPage = () => {
                         </Row>
                         <Row className="px-2 px-md-5 mb-5 text-center">
                             <Col>
-                                <p>
+                                <p data-aos="fade-up">
                                     <strong>
                                         I aim to keep pricing clear,
                                         straightforward, and flexible.
@@ -62,8 +62,8 @@ const ServicesPage = () => {
                             </Col>
                         </Row>
                         <Row className="px-2 px-md-5 mb-5">
-                            <Col className={`${styles.ThinBorder} px-md-4`}>
-                                <h4 className="mb-2">
+                            <Col className={`${styles.ThinBorder} px-md-5`} data-aos="flip-right">
+                                <h4 className="my-2">
                                     Option 1: One-off Build + Monthly Hosting
                                 </h4>
                                 <ul>
@@ -83,7 +83,7 @@ const ServicesPage = () => {
                                         <strong>
                                             Monthly hosting and management
                                         </strong>{" "}
-                                        (£30+ per month)
+                                        (£30 per month)
                                     </li>
                                 </ul>
                                 <p className="mb-2">
@@ -99,15 +99,15 @@ const ServicesPage = () => {
                                     <li className="mb-2">
                                         <strong>£30</strong> domain for the year
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="m-0">
                                         <strong>£30</strong> per month hosting
                                     </li>
                                 </ul>
                             </Col>
                         </Row>
                         <Row className="px-2 px-md-5 mb-5">
-                            <Col className={`${styles.ThinBorder} px-md-4`}>
-                                <h4 className="mb-3">
+                            <Col className={`${styles.ThinBorder} px-md-5`} data-aos="flip-right">
+                                <h4 className="my-3">
                                     Option 2: All-in Monthly Plan
                                 </h4>
                                 <p>
@@ -135,7 +135,7 @@ const ServicesPage = () => {
                                         </strong>
                                     </li>
                                 </ul>
-                                <p className="my-4">
+                                <p className="mt-4 mb-3">
                                     This works well for businesses that want to
                                     <strong>
                                         {" "}
@@ -150,16 +150,16 @@ const ServicesPage = () => {
                         </Row>
                     </Col>
                 </Row>
-                <Row className={`${styles.subSectionTransparent}`}>
-                    <Col className="px-md-5">
+                <Row className={`${styles.subSectionPurpleMid}`}>
+                    <Col className="px-md-5 my-5">
                         <Row className="text-center my-5">
                             <Col>
                                 <h2>Website Design & Build</h2>
                             </Col>
                         </Row>
                         <Row className="px-2 px-md-5 mb-5">
-                            <Col className={`${styles.ThinBorder} px-md-4`}>
-                                <p className="mb-4">
+                            <Col className={`${styles.ThinBorder} px-md-5`}>
+                                <p className="my-4" data-aos="fade-right">
                                     Every website I build starts with
                                     <strong>
                                         {" "}
@@ -167,14 +167,14 @@ const ServicesPage = () => {
                                     </strong>
                                     behind it.
                                 </p>
-                                <p className="mb-4">
+                                <p className="mb-4" data-aos="fade-left">
                                     We'll talk through what you need,{" "}
                                     <strong>
                                         what the website should achieve
                                     </strong>
                                     , and how you'd like it to look and feel.
                                 </p>
-                                <p>
+                                <p data-aos="fade-up">
                                     From there,{" "}
                                     <strong>
                                         I design and build a custom website that
@@ -194,21 +194,21 @@ const ServicesPage = () => {
                                     </strong>
                                 </p>
                                 <ul>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>A custom design</strong>{" "}
                                         tailored to your business
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Mobile-friendly layouts</strong>{" "}
                                         that work across devices
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Performance and search visibility
                                             optimised
                                         </strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Easy navigation</strong> and
                                         clear structure
                                     </li>
@@ -217,7 +217,7 @@ const ServicesPage = () => {
                         </Row>
                     </Col>
                 </Row>
-                <Row className={`${styles.subSectionTransparent}`}>
+                <Row className={`${styles.subSectionBlueBottom}`}>
                     <Col className="px-md-5">
                         <Row className="text-center my-5">
                             <Col>
@@ -232,21 +232,21 @@ const ServicesPage = () => {
                                     keep things simple and reliable.
                                 </p>
                                 <ul>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Website hosting</strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Domain setup and management
                                         </strong>
                                     </li>
-                                    <li className="mb-4">
+                                    <li className="mb-4" data-aos="fade-left">
                                         <strong>
                                             Deployment and ongoing maintenance
                                         </strong>
                                     </li>
                                 </ul>
-                                <p className="mb-4">
+                                <p className="mb-4" data-aos="fade-up">
                                     <strong>
                                         If you already have a domain, that's no
                                         problem
@@ -278,23 +278,23 @@ const ServicesPage = () => {
                                     </strong>
                                 </p>
                                 <ul>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Content updates</strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Text and image changes</strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Small layout tweaks</strong>
                                     </li>
-                                    <li className="mb-4">
+                                    <li className="mb-4" data-aos="fade-left">
                                         <strong>
                                             General improvements as your
                                             business evolves
                                         </strong>
                                     </li>
                                 </ul>
-                                <p className="mb-4">
+                                <p className="mb-4" data-aos="fade-up">
                                     <strong>
                                         Updates after the original deployed
                                         build are charged at £40 per hour.
@@ -318,7 +318,7 @@ const ServicesPage = () => {
                         </Row>
                     </Col>
                 </Row>
-                <Row className={`${styles.subSectionTransparent}`}>
+                <Row className={`${styles.subSectionBlueTop}`}>
                     <Col className="px-md-5">
                         <Row className="text-center my-5">
                             <Col>
@@ -337,20 +337,20 @@ const ServicesPage = () => {
                                     </strong>
                                 </p>
                                 <ul className="mb-2">
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>Blogs or news sections</strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Integrating booking systems
                                         </strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Custom layouts or page types
                                         </strong>
                                     </li>
-                                    <li className="mb-4">
+                                    <li className="mb-4" data-aos="fade-left">
                                         <strong>
                                             Extra features tailored to your
                                             business
@@ -369,8 +369,8 @@ const ServicesPage = () => {
                         </Row>
                     </Col>
                 </Row>
-                <Row className={`${styles.subSectionTransparent}`}>
-                    <Col className="px-md-5">
+                <Row className={`${styles.subSectionPurpleBottom}`}>
+                    <Col className="px-md-5 my-5">
                         <Row className="text-center my-5">
                             <Col>
                                 <h2>A Straightforward Process</h2>
@@ -385,23 +385,23 @@ const ServicesPage = () => {
                                     </strong>
                                 </p>
                                 <ul>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Talk through your ideas and goals
                                         </strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Agree on the structure and features
                                             of the site
                                         </strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Build and refine the design together
                                         </strong>
                                     </li>
-                                    <li className="mb-2">
+                                    <li className="mb-2" data-aos="fade-left">
                                         <strong>
                                             Launch the site and keep it running
                                             smoothly
@@ -415,17 +415,17 @@ const ServicesPage = () => {
                 <Row className={`${styles.subSectionTransparent}`}>
                     <Col className="px-md-5">
                         <Row className="px-2 px-md-5 mb-5">
-                            <Col className={`${styles.ThinBorder} px-md-4`}>
-                                <p>
+                            <Col className={`${styles.ThinBorder} px-md-5`}>
+                                <p className="mt-3" data-aos="fade-right">
                                     <strong>
                                         If you're thinking about a website,
                                     </strong>{" "}
                                     whether it's your first one or a replacement
-                                    for an existing site ,{" "}
+                                    for an existing site,{" "}
                                     <strong>I'd be happy to chat</strong> and
                                     see how I can help.
                                 </p>
-                                <p>
+                                <p data-aos="fade-left">
                                     There's{" "}
                                     <strong>
                                         no pressure and no obligation, just a

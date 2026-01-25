@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 import styles from "./ContactPage.module.css";
+import HeroSection from "../components/HeroSection";
 
 const ContactPage = () => {
     const [email, setEmail] = useState("");
@@ -74,6 +75,7 @@ const ContactPage = () => {
 
     return (
         <Container>
+            <HeroSection />
             <Row className={`${styles.firstSection} my-5`}>
                 <Col className="px-md-5">
                     <Row className="my-5 text-center">
@@ -84,10 +86,13 @@ const ContactPage = () => {
                     <Row className="px-2 px-md-5">
                         <Col
                             className={`mx-md-5 px-md-4  ${styles.ThinBorder}`}>
-                            <p>
-                                If you're thinking about a website, whether it's
-                                your first one, a refresh, or just an idea you
-                                want to talk through, feel free to get in touch.
+                            <p className="m-0 px-2 py-md-2">
+                                <strong>
+                                    If you're thinking about a website, whether
+                                    it's your first one, a refresh, or just an
+                                    idea you want to talk through, feel free to
+                                    get in touch.
+                                </strong>
                             </p>
                         </Col>
                     </Row>
@@ -96,17 +101,25 @@ const ContactPage = () => {
 
             <Row className={`${styles.subSectionTransparent}`}>
                 <Col className="px-md-5 text-center">
-                    <p>Email: kmwebdevstudio@gmail.com</p>
-                    <p>Phone/Text: 07766082304</p>
+                    <p>
+                        <strong>Email:</strong> kmwebdevstudio@gmail.com
+                    </p>
+                    <p>
+                        <strong>Phone/Text:</strong> 07766 082304
+                    </p>
                 </Col>
             </Row>
 
-            <Row className={`${styles.subSectionTransparent}`}>
+            <Row className={`${styles.subSectionBlue} my-5`}>
                 <Col className="px-md-5">
                     <Row className="text-center my-5">
                         <Col>
                             <h2>Contact Form</h2>
-                            <p>Get in touch or request a call back</p>
+                            <p>
+                                <strong>
+                                    Get in touch or request a call back
+                                </strong>
+                            </p>
                         </Col>
                     </Row>
                     <Row className="px-2 px-md-5 mb-5">
@@ -191,7 +204,7 @@ const ContactPage = () => {
                                         {!phone && requestCallback
                                             ? "Phone is required to request a call back"
                                             : !phone && !email
-                                              ? "Please provide a phone or email"
+                                              ? "Please provide a phone number or email"
                                               : "Phone must contain only numbers"}
                                     </Form.Control.Feedback>
                                 </Form.Group>
@@ -210,9 +223,8 @@ const ContactPage = () => {
                                         }
                                     />
                                 </Form.Group>
-                                <div className="d-flex justify-content-center">
-                                    <Form.Group
-                                    className="mb-3"
+                                <Form.Group
+                                    className="my-4 d-flex justify-content-center"
                                     controlId="formCallback">
                                     <Form.Check
                                         type="checkbox"
@@ -223,17 +235,17 @@ const ContactPage = () => {
                                         }
                                     />
                                 </Form.Group>
-                                </div>
-                                
-                                <div className="text-center my-5">
-                                    <Button
-                                    variant="primary"
-                                    type="submit"
-                                    disabled={sending}>
-                                    {sending ? "Sending..." : "Submit"}
-                                </Button>
-                                </div>
-                                
+                                <Row>
+                                    <Col className="text-center my-4">
+                                        <Button
+                                            variant="primary"
+                                            type="submit"
+                                            disabled={sending}
+                                            className={styles.SubmitButton}>
+                                            {sending ? "Sending..." : "Submit"}
+                                        </Button>
+                                    </Col>
+                                </Row>
                             </Form>
                         </Col>
                     </Row>
