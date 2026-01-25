@@ -10,7 +10,7 @@
 .subSectionPurple {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: linear-gradient(
         transparent,
         rgba(229, 224, 255, 0.2) 10%,
@@ -24,7 +24,7 @@
 .subSectionPurpleMid {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: linear-gradient(
         rgba(142, 167, 233, 0.2),
         rgba(229, 224, 255, 0.2) 10%,
@@ -38,7 +38,7 @@
 .subSectionPurpleBottom {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: linear-gradient(
         rgba(142, 167, 233, 0.2),
         rgba(229, 224, 255, 0.2) 10%,
@@ -52,7 +52,7 @@
 .subSectionBlue {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: linear-gradient(
         transparent,
         rgba(142, 167, 233, 0.2) 10%,
@@ -67,7 +67,7 @@
 .subSectionBlueTop {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: linear-gradient(
         transparent,
         rgba(142, 167, 233, 0.2) 10%,
@@ -81,7 +81,7 @@
 .subSectionBlueBottom {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: linear-gradient(
         rgba(142, 167, 233, 0.2),
         rgba(142, 167, 233, 0.2) 90%,
@@ -95,7 +95,7 @@
 .subSectionTransparent {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 70vh;
     background: transparent;
     display: flex;
     align-items: center;

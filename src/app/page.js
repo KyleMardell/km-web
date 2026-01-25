@@ -206,8 +206,10 @@ export default function Home() {
                                     Who I Work With
                                 </h2>
                                 <p className="my-5">
-                                    I mainly work with small and local
-                                    businesses, including:
+                                    <strong>
+                                        I mainly work with small and local
+                                        businesses, including:
+                                    </strong>
                                 </p>
                                 <ul>
                                     <li className="mb-3" data-aos="fade-left">

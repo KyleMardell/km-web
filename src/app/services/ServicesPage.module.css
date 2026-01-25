@@ -1,6 +1,7 @@
 .firstSection {
     position: relative;
     z-index: 2;
+    min-height: 50vh;
     background: transparent;
 }
 
@@ -11,4 +12,13 @@
     background: transparent;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.ThinBorder {
+    border: 1px solid rgba(142, 167, 233, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(142, 167, 233, 0.4);
+    padding: 15px 15px 15px 15px;
+    margin: 0;
 }
