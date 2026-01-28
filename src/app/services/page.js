@@ -22,10 +22,10 @@ const ServicesPage = () => {
                                 <p>
                                     I offer{" "}
                                     <strong>
-                                        end-to-end website services for 
+                                        end-to-end website services for
                                         businesses
                                     </strong>{" "}
-                                    and individuals — from design and build, to
+                                    and individuals, from design and build, to
                                     hosting and domains, through to ongoing
                                     updates and improvements.
                                 </p>
@@ -62,7 +62,9 @@ const ServicesPage = () => {
                             </Col>
                         </Row>
                         <Row className="px-2 px-md-5 mb-5">
-                            <Col className={`${styles.ThinBorder} px-md-5`} data-aos="flip-right">
+                            <Col
+                                className={`${styles.ThinBorder} px-md-5`}
+                                data-aos="flip-right">
                                 <h4 className="my-2">
                                     Option 1: One-off Build + Monthly Hosting
                                 </h4>
@@ -106,7 +108,9 @@ const ServicesPage = () => {
                             </Col>
                         </Row>
                         <Row className="px-2 px-md-5 mb-5">
-                            <Col className={`${styles.ThinBorder} px-md-5`} data-aos="flip-right">
+                            <Col
+                                className={`${styles.ThinBorder} px-md-5`}
+                                data-aos="flip-right">
                                 <h4 className="my-3">
                                     Option 2: All-in Monthly Plan
                                 </h4>
@@ -178,9 +182,9 @@ const ServicesPage = () => {
                                     From there,{" "}
                                     <strong>
                                         I design and build a custom website that
-                                        reflects your business
+                                        reflects your business,
                                     </strong>{" "}
-                                    — whether that's clean and professional,
+                                    whether that's clean and professional,
                                     modern and expressive, or something in
                                     between.
                                 </p>
@@ -301,7 +305,7 @@ const ServicesPage = () => {
                                     </strong>{" "}
                                     This keeps things flexible, meaning updates
                                     can be done on the fly. You're always
-                                    welcome to ask for changes — we'll just
+                                    welcome to ask for changes, we'll just
                                     agree what's involved before I get started.
                                 </p>
                                 <p>

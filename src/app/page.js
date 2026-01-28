@@ -10,10 +10,10 @@ import AOSWrapper from "./aos/AOSWrapper";
 import HeroSection from "./components/HeroSection";
 import FontWaveAnim from "./animations/FontWaveAnim";
 
-import laptopWebImg from "../../public/images/laptopweb.jpg";
-import responsiveImg from "../../public/images/responsivedesign.png";
-import laptopCloseImg from "../../public/images/laptopclose.jpg";
-import constructionLaptopImg from "../../public/images/constructlaptop.jpg";
+import laptopWebImg from "../../public/images/laptopweb.webp";
+import responsiveImg from "../../public/images/responsivedesign.webp";
+import laptopCloseImg from "../../public/images/laptopclose.webp";
+import constructionLaptopImg from "../../public/images/constructlaptop.webp";
 
 export default function Home() {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -89,7 +89,7 @@ export default function Home() {
                         </Row>
                         <Row className={styles.subSectionTransparentSmall}>
                             <Col className="text-center mt-5">
-                                <Link href="/" className={styles.CtaButton}>
+                                <Link href="/contact" className={styles.CtaButton}>
                                     <strong>Get In Touch</strong>
                                 </Link>
                             </Col>
@@ -293,13 +293,23 @@ export default function Home() {
                                 <p
                                     className="m-1 py-1 py-lg-3"
                                     data-aos="zoom-in-right">
+                                    I am a web developer from Eccles,
+                                    Manchester, with a passion for making
+                                    functional, good looking websites. I have
+                                    knowledge in full stack applications, SEO and
+                                    specialise in helping small businesses get
+                                    online.
+                                </p>
+                                <p
+                                    className="m-1 py-1 py-lg-3 text-end"
+                                    data-aos="zoom-in-left">
                                     I started doing this because I wanted to
                                     help local businesses build better online
                                     presences.
                                 </p>
                                 <p
-                                    className="m-1 py-1 py-lg-3 text-end"
-                                    data-aos="zoom-in-left">
+                                    className="m-1 py-1 py-lg-3"
+                                    data-aos="zoom-in-right">
                                     I've seen plenty of businesses with websites
                                     that don't really represent them or no
                                     website at all, and thought, this could be
@@ -307,8 +317,8 @@ export default function Home() {
                                     how it works and how people experience it.
                                 </p>
                                 <p
-                                    className="m-1 py-1 py-lg-3"
-                                    data-aos="zoom-in-right">
+                                    className="m-1 py-1 py-lg-3 text-end"
+                                    data-aos="zoom-in-left">
                                     Good websites today need to be intuitive,
                                     easy to navigate, and suited to the type of
                                     business they represent. Some businesses
@@ -320,7 +330,7 @@ export default function Home() {
                                 </p>
                                 <p
                                     className="m-1 py-1 py-lg-3 text-center"
-                                    data-aos="zoom-in-left">
+                                    data-aos="zoom-in-right">
                                     I want local businesses to have a website
                                     they feel confident sharing and a local
                                     person they can trust to build and support
@@ -359,9 +369,10 @@ export default function Home() {
                                         </strong>{" "}
                                         <br />
                                         You'll get a Google Drive folder to
-                                        upload logos, images, and content. You
-                                        can choose colours and fonts, or I can
-                                        suggest options that fit your brand.
+                                        upload logos, images, and content.
+                                        I will also send you a short form that 
+                                        lets me know about your business and 
+                                        website design preferences.
                                     </li>
                                     <li className="mb-3" data-aos="fade-left">
                                         <strong>Design & review</strong> <br />I
@@ -425,7 +436,7 @@ export default function Home() {
                         </Row>
                         <Row className={styles.subSectionTransparentSmall}>
                             <Col className="text-center mt-5">
-                                <Link href="/" className={styles.CtaButton}>
+                                <Link href="/contact" className={styles.CtaButton}>
                                     <strong>Get In Touch</strong>
                                 </Link>
                             </Col>
