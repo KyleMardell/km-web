@@ -1,3 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Poiret+One&display=swap");
+
 .AltNav {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #FFD93D;
+    box-shadow: 2px 2px 2px #ffc900;
+    overflow: hidden;
+}
+
+.BussName {
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 600;
+    letter-spacing: 0.5;
+    text-shadow: 0 0 8px #ffc900, 0 0 16px #ffc900;
+}
+
+.navbarToggler {
+    border-radius: 2px;
+    border: 1px solid #ffc900;
+    background: linear-gradient(135deg, #FFD93D,  #ffc900 );
+}
+
+.PageLinkActive {
+    text-decoration: underline 2px #ffc900;
+}
+
+.PageLink,
+.PageLinkActive {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+}
+
+.PageLinkActive:hover {
+    text-decoration: underline 3px #ffc900;
+    font-weight: 500;
+}
+
+.PageLink:hover {
+    text-decoration: underline 3px #ffc900;
+    font-weight: 500;
 }

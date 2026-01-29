@@ -16,11 +16,11 @@ const AltHairPage = () => {
                     <Row className="my-4 px-3">
                         <Col
                             xs={4}
-                            className="d-flex align-items-center justify-content-center">
-                            <h1>Alt Hair</h1>
+                            className="d-flex align-items-center justify-content-center text-center">
+                            <h1 className={styles.BussName}>Alt Hair</h1>
                         </Col>
                         <Col xs={8}>
-                            <h2>
+                            <h2 className={styles.Tagline}>
                                 Specialist Colour & Hair Extensions in Eccles,
                                 Manchester.
                             </h2>
@@ -34,6 +34,7 @@ const AltHairPage = () => {
                                     alt="4 girls with their backs turned, each with different heair styles"
                                     fill
                                     priority
+                                    sizes="100vw"
                                     className={styles.HeroImage}
                                 />
                             </div>

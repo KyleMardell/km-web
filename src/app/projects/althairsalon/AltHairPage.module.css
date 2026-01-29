@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Poiret+One&display=swap");
+
 .AppWrapper {
-    background-color: #EBD6FB;
+    background-color: #ebd6fb;
     padding: 0;
 }
 
@@ -16,8 +18,21 @@
     object-position: center top;
 }
 
+.BussName {
+    font-family: "Lavishly Yours", cursive;
+    font-size: 4rem;
+}
+
+.Tagline {
+    font-family: "Poiret One", sans-serif;
+}
+
 @media (max-width: 768px) {
     .heroImageWrapper {
         height: 33vh;
+    }
+
+    .BussName {
+        font-size: 2.2rem;
     }
 }
