@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Poiret+One&display=swap");
 
 .AltNav {
-    border-bottom: 1px solid #FFD93D;
-    box-shadow: 2px 2px 2px #ffc900;
+    box-shadow: 2px 2px 2px gray;
     overflow: hidden;
 }
 
@@ -15,7 +14,7 @@
 
 .navbarToggler {
     border-radius: 2px;
-    border: 1px solid #ffc900;
+    border: 1px solid gray;
     background: linear-gradient(135deg, #FFD93D,  #ffc900 );
 }
 
