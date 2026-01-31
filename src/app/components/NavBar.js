@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <Navbar expanded={expanded} ref={ref} className={styles.NavBar} expand="lg" fixed="top">
             <Container>
-                <Navbar.Brand className={styles.Brand} href="#home">KM Web</Navbar.Brand>
+                <Navbar.Brand className={styles.Brand} href="#home"><img alt="km web logo" src="/images/kmweb-logo.webp" width="130" height="20" /></Navbar.Brand>
                 <Navbar.Toggle onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" className={`${styles.DropIcon}`} />
                 <Navbar.Collapse id="basic-navbar-nav" className="text-center">
                     <Nav className="me-auto">

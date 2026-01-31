@@ -30,7 +30,7 @@ const AltHairPage = () => {
                         <Col>
                             <div className={styles.heroImageWrapper}>
                                 <Image
-                                    src="/images/althair/multistyles.webp"
+                                    src="/images/althair/fourgirls.webp"
                                     alt="4 girls with their backs turned, each with different heair styles"
                                     fill
                                     priority
@@ -46,10 +46,10 @@ const AltHairPage = () => {
                 <Col>
                     <Row className="text-center">
                         <Col>
-                            <h2>Welcome to Alt Hair</h2>
+                            <h2 className={styles.HeadFont}>Welcome to Alt Hair</h2>
                         </Col>
                     </Row>
-                    <Row className="my-4">
+                    <Row className={`my-4 ${styles.ReadFont}`}>
                         <Col>
                             <p>
                                 Alt Hair is a specialist hair salon based in
@@ -68,7 +68,7 @@ const AltHairPage = () => {
                     </Row>
                     <Row>
                         <Col xs={8}>
-                            <p>
+                            <p className={`${styles.ReadFont}`}>
                                 A personalised salon experience with over 15
                                 years of colour expertise. From bold
                                 transformations to subtle, natural finishes.
@@ -76,9 +76,9 @@ const AltHairPage = () => {
                         </Col>
                         <Col
                             xs={4}
-                            className="d-flex flex-column align-items-center justify-content-center">
+                            className="d-flex flex-column align-items-center justify-content-center text-center">
                             <Button>Enquire Now</Button>
-                            <small>Appointments by enquiry</small>
+                            <small className={`${styles.SmallFont}`}>Appointments by enquiry</small>
                         </Col>
                     </Row>
                 </Col>
@@ -87,15 +87,15 @@ const AltHairPage = () => {
                 <Col>
                     <Row className="text-center my-4">
                         <Col>
-                            <h2>Specialist Hair Services</h2>
+                            <h2 className={`${styles.HeadFont}`}>Specialist Hair Services</h2>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs={12} lg={4} className="mb-3">
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>Hair Colouring</Card.Title>
-                                    <Card.Text>
+                                    <Card.Title className={`${styles.CardHead}`}>Hair Colouring</Card.Title>
+                                    <Card.Text className={`${styles.ReadFont}`}>
                                         From full colour transformations to
                                         subtle refreshes, with a strong focus on
                                         hair health and long term results.
@@ -106,8 +106,8 @@ const AltHairPage = () => {
                         <Col xs={12} lg={4} className="mb-3">
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>Hair Extensions</Card.Title>
-                                    <Card.Text>
+                                    <Card.Title className={`${styles.CardHead}`}>Hair Extensions</Card.Title>
+                                    <Card.Text className={`${styles.ReadFont}`}>
                                         Specialist application using Beauty
                                         Works and Sway extensions for natural
                                         looking length and volume.
@@ -118,8 +118,8 @@ const AltHairPage = () => {
                         <Col xs={12} lg={4} className="mb-3">
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>Cuts & Styling</Card.Title>
-                                    <Card.Text>
+                                    <Card.Title className={`${styles.CardHead}`}>Cuts & Styling</Card.Title>
+                                    <Card.Text className={`${styles.ReadFont}`}>
                                         Modern cuts and styling to suit your
                                         face shape, hair type, and personal
                                         style.
@@ -139,11 +139,11 @@ const AltHairPage = () => {
                 <Col>
                     <Row className="my-4 text-center">
                         <Col>
-                            <h2>Why choose Alt Hair</h2>
+                            <h2 className={`${styles.HeadFont}`}>Why choose Alt Hair</h2>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col className={`${styles.ReadFont}`}>
                             <ul className="d-lg-flex flex-column align-items-center">
                                 <li>Over 15 years of experience</li>
                                 <li>
@@ -172,7 +172,7 @@ const AltHairPage = () => {
                 <Col>
                     <Row className="my-4 text-center">
                         <Col>
-                            <h2>Client Reviews</h2>
+                            <h2 className={`${styles.HeadFont}`}>Client Reviews</h2>
                         </Col>
                     </Row>
                     <Row className="px-md-5">
@@ -191,7 +191,7 @@ const AltHairPage = () => {
                 <Col>
                     <Row className="my-4">
                         <Col>
-                            <h2>Where to find us</h2>
+                            <h2 className={`${styles.HeadFont}`}>Where to find us</h2>
                         </Col>
                     </Row>
                     <Row>
@@ -210,8 +210,8 @@ const AltHairPage = () => {
                 <Col>
                     <Row className="my-4 text-center">
                         <Col>
-                            <h2>Ready to book or have a question?</h2>
-                            <p>
+                            <h2 className={`${styles.HeadFont}`}>Ready to book<br /> or<br /> have a question?</h2>
+                            <p className={`${styles.ReadFont}`}>
                                 Get in touch to discuss your hair, ask a
                                 question, or enquire about availability.
                             </p>

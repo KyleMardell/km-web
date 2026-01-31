@@ -11,6 +11,11 @@
     height: 50vh;
     max-height: 50vh;
     overflow: hidden;
+    background: linear-gradient(
+        transparent,
+        rgba(255, 201, 0, 0.5) 15%,
+        rgba(235, 214, 251, 0.5)
+    );
 }
 
 .heroImage {
@@ -21,10 +26,33 @@
 .BussName {
     font-family: "Lavishly Yours", cursive;
     font-size: 4rem;
+    text-shadow:
+        0 0 8px rgba(255, 201, 0, 0.5),
+        0 0 16px rgba(255, 201, 0, 0.5);
 }
 
 .Tagline {
     font-family: "Poiret One", sans-serif;
+}
+
+.HeadFont {
+    font-family: "Lavishly Yours", cursive;
+    font-size: 2.2rem;
+    letter-spacing: 1;
+}
+
+.ReadFont {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+}
+
+.SmallFont {
+    font-family: "Poiret One", sans-serif;
+}
+
+.CardHead {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
 }
 
 @media (max-width: 768px) {

@@ -9,13 +9,13 @@
     font-family: "Lavishly Yours", cursive;
     font-weight: 600;
     letter-spacing: 0.5;
-    text-shadow: 0 0 8px #ffc900, 0 0 16px #ffc900;
+    text-shadow: 0 0 8px rgba(255, 201, 0, 0.5), 0 0 16px rgba(255, 201, 0, 0.5);
 }
 
 .navbarToggler {
     border-radius: 2px;
     border: 1px solid gray;
-    background: linear-gradient(135deg, #FFD93D,  #ffc900 );
+    background: linear-gradient(135deg, rgba(255, 217, 61, 0.2),  rgba(255, 201, 0, 0.3) );
 }
 
 .PageLinkActive {
