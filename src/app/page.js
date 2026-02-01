@@ -280,6 +280,7 @@ export default function Home() {
                             clean and professional, modern and bold, or
                             somewhere in between.
                         </p>
+                        <Link href="/projects/althairsalon">Alt Hair Salon</Link>
                     </Col>
                 </Row>
 

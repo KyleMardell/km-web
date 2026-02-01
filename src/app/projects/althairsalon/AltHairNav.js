@@ -6,7 +6,7 @@ import styles from "./AltHairNav.module.css";
 
 const AltHairNav = () => {
     return (
-        <Navbar expand="lg" className={styles.AltNav}>
+        <Navbar fixed="top" expand="lg" className={styles.AltNav}>
             <Container>
                 <Navbar.Brand href="/projects/althairsalon" className={styles.BussName}>
                     Alt Hair Salon

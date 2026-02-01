@@ -3,6 +3,7 @@
 .AppWrapper {
     background-color: #ebd6fb;
     padding: 0;
+    padding-top: 56px;
 }
 
 .heroImageWrapper {
@@ -50,9 +51,114 @@
     font-family: "Poiret One", sans-serif;
 }
 
+.AltButton {
+    border: 2px solid gray;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 217, 61, 0.8),
+        rgba(255, 201, 0, 0.8)
+    );
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
+    color: black;
+    box-shadow: 2px 2px 2px rgba(125, 125, 125, 0.5);
+}
+
+/* Card Styles */
 .CardHead {
     font-family: "Poiret One", sans-serif;
     font-weight: 800;
+}
+
+.CardText {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
+    color: white;
+}
+
+.bgCard {
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    background: transparent;
+    box-shadow: 2px 2px 2px rgba(125, 125, 125, 0.5);
+}
+
+.bgAnimation {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.AnimColour {
+    animation: bgFadeColour 15s infinite;
+}
+
+.AnimExtension {
+    animation: bgFadeExtension 25s infinite;
+}
+
+.AnimCut {
+    animation: bgFadeCut 15s infinite;
+}
+
+@keyframes bgFadeColour {
+    0% {
+        background-image: url("/images/althair/colouring1.webp");
+    }
+    33% {
+        background-image: url("/images/althair/colouring2.webp");
+    }
+    66% {
+        background-image: url("/images/althair/colouring1.webp");
+    }
+    100% {
+        background-image: url("/images/althair/colouring2.webp");
+    }
+}
+
+@keyframes bgFadeExtension {
+    0% {
+        background-image: url("/images/althair/styling1.webp");
+    }
+    25% {
+        background-image: url("/images/althair/styling2.webp");
+    }
+    50% {
+        background-image: url("/images/althair/styling3.webp");
+    }
+    75% {
+        background-image: url("/images/althair/styling4.webp");
+    }
+    100% {
+        background-image: url("/images/althair/styling1.webp");
+    }
+}
+
+@keyframes bgFadeCut {
+    0% {
+        background-image: url("/images/althair/cut1.webp");
+    }
+    33% {
+        background-image: url("/images/althair/cut2.webp");
+    }
+    66% {
+        background-image: url("/images/althair/cut1.webp");
+    }
+    100% {
+        background-image: url("/images/althair/cut2.webp");
+    }
+}
+
+/* Ensure the card content is above the background */
+.cardContent {
+    position: relative;
+    z-index: 2;
+    color: white;
+    background: rgba(0, 0, 0, 0.35); /* optional */
 }
 
 @media (max-width: 768px) {
