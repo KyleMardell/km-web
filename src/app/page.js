@@ -89,7 +89,9 @@ export default function Home() {
                         </Row>
                         <Row className={styles.subSectionTransparentSmall}>
                             <Col className="text-center mt-5">
-                                <Link href="/contact" className={styles.CtaButton}>
+                                <Link
+                                    href="/contact"
+                                    className={styles.CtaButton}>
                                     <strong>Get In Touch</strong>
                                 </Link>
                             </Col>
@@ -259,28 +261,46 @@ export default function Home() {
 
                 <Row className={styles.subSectionTransparent}>
                     <Col className="px-3 px-md-5">
-                        <h2 className="text-center my-5">Example Websites</h2>
-                        <p>
-                            Below are some example websites that show the kind
-                            of work I do and the range of businesses I build
-                            for.
-                        </p>
-                        <p>Each project starts with understanding:</p>
-                        <ul>
-                            <li>What the business does</li>
-                            <li>Who the website is for</li>
-                            <li>
-                                What visitors should feel and do when they land
-                                on it
-                            </li>
-                        </ul>
-                        <p>
-                            From there, the design, layout, and features are
-                            shaped around that — whether the site needs to feel
-                            clean and professional, modern and bold, or
-                            somewhere in between.
-                        </p>
-                        <Link href="/projects/althairsalon">Alt Hair Salon</Link>
+                        <h2 className="text-center my-5">Projects</h2>
+
+                        <div className={styles.projectsGrid}>
+                            <Link
+                                href="https://manchesterveganguide.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.projectCard}>
+                                <div className={styles.projectImage}>
+                                    <Image
+                                        src="/images/projects/mancveganscreen.webp"
+                                        alt="Client website project"
+                                        width={1200}
+                                        height={800}
+                                        sizes="(max-width: 767px) 100vw, 50vw"
+                                    />
+                                </div>
+                                <p className={styles.projectTitle}>
+                                    Manchester Vegan Guide
+                                </p>
+                            </Link>
+                            <Link
+                                href="/projects/althairsalon"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.projectCard}>
+                                <div className={styles.projectImage}>
+                                    <Image
+                                        src="/images/projects/althairscreenshot.webp" // add a screenshot of the site here
+                                        alt="Alt Hair Salon website"
+                                        width={1200}
+                                        height={800}
+                                        sizes="(max-width: 767px) 100vw, 50vw"
+                                    />
+                                </div>
+                                <p className={styles.projectTitle}>
+                                    Alt Hair Salon
+                                </p>
+                            </Link>
+                        </div>
                     </Col>
                 </Row>
 
@@ -297,9 +317,9 @@ export default function Home() {
                                     I am a web developer from Eccles,
                                     Manchester, with a passion for making
                                     functional, good looking websites. I have
-                                    knowledge in full stack applications, SEO and
-                                    specialise in helping small businesses get
-                                    online.
+                                    knowledge in full stack applications, SEO
+                                    and specialise in helping small businesses
+                                    get online.
                                 </p>
                                 <p
                                     className="m-1 py-1 py-lg-3 text-end"
@@ -370,9 +390,9 @@ export default function Home() {
                                         </strong>{" "}
                                         <br />
                                         You'll get a Google Drive folder to
-                                        upload logos, images, and content.
-                                        I will also send you a short form that 
-                                        lets me know about your business and 
+                                        upload logos, images, and content. I
+                                        will also send you a short form that
+                                        lets me know about your business and
                                         website design preferences.
                                     </li>
                                     <li className="mb-3" data-aos="fade-left">
@@ -437,7 +457,9 @@ export default function Home() {
                         </Row>
                         <Row className={styles.subSectionTransparentSmall}>
                             <Col className="text-center mt-5">
-                                <Link href="/contact" className={styles.CtaButton}>
+                                <Link
+                                    href="/contact"
+                                    className={styles.CtaButton}>
                                     <strong>Get In Touch</strong>
                                 </Link>
                             </Col>

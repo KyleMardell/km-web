@@ -181,6 +181,46 @@
     filter: grayscale(0%) contrast(1) brightness(1);
 }
 
+.projectsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.projectCard {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.projectImage {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.projectImage img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Subtle hover effect */
+.projectCard:hover .projectImage img {
+    transform: scale(1.05);
+}
+
+.projectTitle {
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 @media (max-width: 900px) {
     .HeroTitle {
         font-size: 2.5rem;
@@ -207,5 +247,15 @@
         filter: grayscale(10%) contrast(0.95) brightness(0.9);
         border-radius: 10px;
         width: 100%;
+    }
+    .projectImage {
+        border-radius: 10px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .projectsGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

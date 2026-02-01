@@ -8,6 +8,33 @@ import Image from "next/image";
 import styles from "./AltHairPage.module.css";
 
 const AltHairPage = () => {
+    const reviews = [
+        {
+            text: "Absolutely in love with my colour. The stylist really listened to what I wanted and somehow made it even better than I imagined. I have had so many compliments already.",
+            name: "Sarah M",
+        },
+        {
+            text: "Best haircut I have had in years. The shape is perfect and it actually looks good even when I style it myself at home, which never usually happens.",
+            name: "James T",
+        },
+        {
+            text: "Came in for a full colour change and I am obsessed with the result. The whole team were so friendly and made me feel really comfortable.",
+            name: "Emma R",
+        },
+        {
+            text: "Great atmosphere and really talented stylists. They took their time and did not rush anything. My hair has never looked this good.",
+            name: "Mark D",
+        },
+        {
+            text: "I was nervous about going lighter but they talked me through everything and the result is perfect. It still feels healthy and looks amazing.",
+            name: "Lisa P",
+        },
+        {
+            text: "Love this place. Always leave feeling fresh and confident. The cuts and colours are always spot on and last really well.",
+            name: "Tom H",
+        },
+    ];
+
     return (
         <Container className={styles.AppWrapper}>
             <AltHairNav />
@@ -101,7 +128,8 @@ const AltHairPage = () => {
                     <Row>
                         <Col xs={12} lg={4} className="mb-3">
                             <Card className={styles.bgCard}>
-                                <div className={`${styles.bgAnimation} ${styles.AnimColour}`}></div>
+                                <div
+                                    className={`${styles.bgAnimation} ${styles.AnimColour}`}></div>
                                 <Card.Body className={styles.cardContent}>
                                     <Card.Title
                                         className={`${styles.CardHead} text-center`}>
@@ -117,7 +145,8 @@ const AltHairPage = () => {
                         </Col>
                         <Col xs={12} lg={4} className="mb-3">
                             <Card className={styles.bgCard}>
-                                <div className={`${styles.bgAnimation} ${styles.AnimExtension}`}></div>
+                                <div
+                                    className={`${styles.bgAnimation} ${styles.AnimExtension}`}></div>
                                 <Card.Body className={styles.cardContent}>
                                     <Card.Title
                                         className={`${styles.CardHead} text-center`}>
@@ -133,7 +162,8 @@ const AltHairPage = () => {
                         </Col>
                         <Col xs={12} lg={4} className="mb-3">
                             <Card className={styles.bgCard}>
-                                <div className={`${styles.bgAnimation} ${styles.AnimCut}`}></div>
+                                <div
+                                    className={`${styles.bgAnimation} ${styles.AnimCut}`}></div>
                                 <Card.Body className={styles.cardContent}>
                                     <Card.Title
                                         className={`${styles.CardHead} text-center`}>
@@ -183,13 +213,88 @@ const AltHairPage = () => {
             <Row className="px-3">
                 <Col>
                     <Row className="my-4">
-                        <Col>Gallery Here</Col>
-                    </Row>
-                    <Row className="my-4 text-center">
                         <Col>
-                            <Button className={styles.AltButton}>
-                                View Gallery
-                            </Button>
+                            <div className={styles.mosaicGallery}>
+                                <Image
+                                    src="/images/althair/endstyle1.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1600}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                    priority
+                                />
+                                <Image
+                                    src="/images/althair/stock1.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1400}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/endstyle2.webp"
+                                    alt=""
+                                    width={1600}
+                                    height={2200}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/stock2.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1400}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/endstyle3.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1400}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/stock3.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1400}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/endstyle4.webp"
+                                    alt=""
+                                    width={1800}
+                                    height={2000}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/stock4.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1400}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/endstyle5.webp"
+                                    alt=""
+                                    width={2000}
+                                    height={1300}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/endstyle1.webp"
+                                    alt=""
+                                    width={1600}
+                                    height={1600}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                <Image
+                                    src="/images/althair/stock5.webp"
+                                    alt=""
+                                    width={2200}
+                                    height={1400}
+                                    sizes="(max-width: 767px) 50vw, 33vw"
+                                />
+                                {/* Add or remove images freely */}
+                            </div>
                         </Col>
                     </Row>
                 </Col>
@@ -205,12 +310,27 @@ const AltHairPage = () => {
                     </Row>
                     <Row className="px-md-5">
                         <Col className="px-md-5">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Body>Review Here</Card.Body>
-                                    <Card.Footer>By Name Here</Card.Footer>
-                                </Card.Body>
-                            </Card>
+                            <Carousel
+                                indicators={true}
+                                controls={true}
+                                interval={6000}>
+                                {reviews.map((review, index) => (
+                                    <Carousel.Item key={index}>
+                                        <Card className="text-center">
+                                            <Card.Body>
+                                                <Card.Text
+                                                    className={styles.ReadFont}>
+                                                    “{review.text}”
+                                                </Card.Text>
+                                            </Card.Body>
+                                            <Card.Footer
+                                                className={styles.ReviewName}>
+                                                {review.name}
+                                            </Card.Footer>
+                                        </Card>
+                                    </Carousel.Item>
+                                ))}
+                            </Carousel>
                         </Col>
                     </Row>
                 </Col>
