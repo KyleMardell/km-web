@@ -2,9 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 
-const FontWaveAnim = ({ text, base, active }) => {
+const FontWaveAnim = ({ text }) => {
     const letters = text.split("");
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        const checkSize = () => {
+            setIsDesktop(window.innerWidth >= 992);
+        };
+
+        checkSize();
+        window.addEventListener("resize", checkSize);
+        return () => window.removeEventListener("resize", checkSize);
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -20,6 +31,9 @@ const FontWaveAnim = ({ text, base, active }) => {
 
         return index === prev || index === activeIndex || index === next;
     };
+
+    const base = isDesktop ? "32px" : "17px";
+    const active = isDesktop ? "36px" : "21px";
 
     return (
         <div

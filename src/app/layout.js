@@ -20,8 +20,26 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-    title: "Kyle Mardell Web Studio",
-    description: "Custom websites for small businesses",
+    metadataBase: new URL("https://kylemardell.me"),
+    robots: {
+        index: true,
+        follow: true,
+    },
+    title: {
+        default: "Kyle Mardell | Freelance Web Developer in Manchester",
+        template: "%s | Kyle Mardell",
+    },
+    description:
+        "I design and build custom websites for small and local businesses. Based in Manchester, I handle everything from setup and hosting to launch and support.",
+    openGraph: {
+        title: "Kyle Mardell | Freelance Web Developer in Manchester",
+        description:
+            "I design and build custom websites for small and local businesses. Based in Manchester, I handle everything from setup and hosting to launch and support.",
+        url: "https://kylemardell.me",
+        siteName: "Kyle Mardell",
+        locale: "en_GB",
+        type: "website",
+    },
 };
 
 export default function RootLayout({ children }) {

@@ -1,7 +1,4 @@
-"use client";
-
 import { Container, Row, Col } from "react-bootstrap";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -16,19 +13,6 @@ import laptopCloseImg from "../../public/images/laptopclose.webp";
 import constructionLaptopImg from "../../public/images/constructlaptop.webp";
 
 export default function Home() {
-    const [isDesktop, setIsDesktop] = useState(false);
-
-    useEffect(() => {
-        const checkSize = () => {
-            setIsDesktop(window.innerWidth >= 992);
-        };
-
-        checkSize(); // run once on mount
-        window.addEventListener("resize", checkSize);
-
-        return () => window.removeEventListener("resize", checkSize);
-    }, []);
-
     return (
         <AOSWrapper>
             <Container>
@@ -36,15 +20,11 @@ export default function Home() {
                 <Row className={`${styles.firstSection} text-center`}>
                     <Col>
                         <h1 className={`${styles.HeroTitle}`}>
-                            Freelance Web Developer
+                            Freelance Web Developer in Manchester
                         </h1>
                         <h2 className={`${styles.HeroName}`}>Kyle Mardell</h2>
                         <div>
-                            <FontWaveAnim
-                                text="Websites built around your business"
-                                base={isDesktop ? "32px" : "17px"}
-                                active={isDesktop ? "36px" : "21px"}
-                            />
+                            <FontWaveAnim text="Websites built around your business" />
                         </div>
                     </Col>
                 </Row>
@@ -150,6 +130,8 @@ export default function Home() {
                                     src={laptopWebImg}
                                     alt="A laptop with a website on it"
                                     className={styles.inlineImage}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
                                 />
                             </Col>
                         </Row>
@@ -194,6 +176,7 @@ export default function Home() {
                                     src={responsiveImg}
                                     alt="A laptop, tablet and phone showing the same website"
                                     className={styles.inlineImage}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </Col>
                         </Row>
@@ -253,6 +236,7 @@ export default function Home() {
                                     src={laptopCloseImg}
                                     alt="A laptop, phone and notebook on a desk"
                                     className={styles.inlineImage}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </Col>
                         </Row>
@@ -314,12 +298,12 @@ export default function Home() {
                                 <p
                                     className="m-1 py-1 py-lg-3"
                                     data-aos="zoom-in-right">
-                                    I am a web developer from Eccles,
+                                    I am a web developer based in Eccles,
                                     Manchester, with a passion for making
-                                    functional, good looking websites. I have
-                                    knowledge in full stack applications, SEO
-                                    and specialise in helping small businesses
-                                    get online.
+                                    functional, good looking websites. I work
+                                    across full stack projects, care a lot about
+                                    SEO, and specialise in helping small
+                                    businesses get online.
                                 </p>
                                 <p
                                     className="m-1 py-1 py-lg-3 text-end"
