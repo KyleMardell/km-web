@@ -4,6 +4,12 @@ import AOSWrapper from "../aos/AOSWrapper";
 import HeroSection from "../components/HeroSection";
 import styles from "./ServicesPage.module.css";
 
+export const metadata = {
+    title: "Web Design and Development Services in Manchester",
+    description:
+        "Clear, straightforward web design, development, hosting, and support for small and local businesses. Based in Manchester, with simple pricing and a no pressure approach.",
+};
+
 const ServicesPage = () => {
     return (
         <AOSWrapper>
@@ -13,7 +19,7 @@ const ServicesPage = () => {
                     <Col>
                         <Row className="my-5 text-center">
                             <Col>
-                                <h1>Services</h1>
+                                <h1>Web Design and Development Services</h1>
                             </Col>
                         </Row>
                         <Row className="px-2 px-md-5">

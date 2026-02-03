@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 import styles from "./ContactPage.module.css";
 import HeroSection from "../components/HeroSection";
 
@@ -80,7 +81,7 @@ const ContactPage = () => {
                 <Col className="px-md-5">
                     <Row className="my-5 text-center">
                         <Col>
-                            <h1>Contact</h1>
+                            <h1>Contact Me</h1>
                         </Col>
                     </Row>
                     <Row className="px-2 px-md-5">
@@ -102,10 +103,12 @@ const ContactPage = () => {
             <Row className={`${styles.subSectionTransparent}`}>
                 <Col className="px-md-5 text-center">
                     <p>
-                        <strong>Email:</strong> kmwebdevstudio@gmail.com
+                        <strong>Email:</strong>{" "}
+                        <a href="mailto:kyle@kmweb.co.uk">kyle@kmweb.co.uk</a>
                     </p>
                     <p>
-                        <strong>Phone/Text:</strong> 07766 082304
+                        <strong>Phone/Text:</strong>{" "}
+                        <a href="tel:07766082304">07766 082304</a>
                     </p>
                 </Col>
             </Row>
@@ -235,6 +238,7 @@ const ContactPage = () => {
                                         }
                                     />
                                 </Form.Group>
+
                                 <Row>
                                     <Col className="text-center my-4">
                                         <Button
@@ -244,6 +248,22 @@ const ContactPage = () => {
                                             className={styles.SubmitButton}>
                                             {sending ? "Sending..." : "Submit"}
                                         </Button>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col className="text-center my-3">
+                                        <p className="m-0">
+                                            <small>
+                                                By sending this form, you agree
+                                                to my{" "}
+                                                <u>
+                                                    <Link href="/privacy">
+                                                        Privacy Policy
+                                                    </Link>
+                                                </u>
+                                                .
+                                            </small>
+                                        </p>
                                     </Col>
                                 </Row>
                             </Form>

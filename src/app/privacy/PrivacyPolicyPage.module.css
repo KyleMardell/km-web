@@ -1,0 +1,29 @@
+.firstSection {
+    position: relative;
+    z-index: 2;
+    min-height: 60vh;
+    background: transparent;
+}
+
+.ThinBorder {
+    border: 1px solid rgba(142, 167, 233, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(142, 167, 233, 0.4);
+    padding: 15px 15px 15px 15px;
+    margin: 0;
+}
+
+.ThinBorder h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.ThinBorder ul {
+    margin-bottom: 1rem;
+}
+
+.lastUpdated {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
