@@ -1,56 +1,14 @@
-/* hero section */
-.hero {
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 0;
-    overflow: hidden;
-}
-
-/* background wrapper */
 .background {
     position: absolute;
     inset: 0;
     display: flex;
     justify-content: center;
-    background: var(--background);
+    overflow: hidden;
 }
 
-/* actual image layer */
-.backgroundInner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 51.5vw;
-    background-image: url("../../../public/images/face.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* overlay */
-.backgroundInner::after {
-    content: "";
+.backgroundOverlay {
     position: absolute;
     inset: 0;
     background: rgba(252, 248, 248, 0.85);
-}
-
-@media (max-width: 2220px) {
-    .backgroundInner {
-        max-width: 59.5vw;
-    }
-}
-
-@media (max-width: 1200px) {
-    .backgroundInner {
-        max-width: 78vw;
-    }
-}
-
-@media (max-width: 560px) {
-    .backgroundInner {
-        max-width: 100vw;
-    }
+    z-index: 1;
 }

@@ -20,7 +20,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-    metadataBase: new URL("https://kylemardell.me"),
+    metadataBase: new URL("https://kmweb.co.uk"),
     robots: {
         index: true,
         follow: true,
@@ -35,7 +35,7 @@ export const metadata = {
         title: "Kyle Mardell | Freelance Web Developer in Manchester",
         description:
             "I design and build custom websites for small and local businesses. Based in Manchester, I handle everything from setup and hosting to launch and support.",
-        url: "https://kylemardell.me",
+        url: "https://kmweb.co.uk",
         siteName: "Kyle Mardell",
         locale: "en_GB",
         type: "website",

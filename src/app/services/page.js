@@ -71,9 +71,9 @@ const ServicesPage = () => {
                             <Col
                                 className={`${styles.ThinBorder} px-md-5`}
                                 data-aos="flip-right">
-                                <h4 className="my-2">
+                                <h3 className="my-2">
                                     Option 1: One-off Build + Monthly Hosting
-                                </h4>
+                                </h3>
                                 <ul>
                                     <li className="mb-2">
                                         <strong>
@@ -117,9 +117,9 @@ const ServicesPage = () => {
                             <Col
                                 className={`${styles.ThinBorder} px-md-5`}
                                 data-aos="flip-right">
-                                <h4 className="my-3">
+                                <h3 className="my-3">
                                     Option 2: All-in Monthly Plan
-                                </h4>
+                                </h3>
                                 <p>
                                     I also offer an all-in monthly option at{" "}
                                     <strong>£85 per month</strong>

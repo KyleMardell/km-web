@@ -1,6 +1,6 @@
 .NavBar {
     box-shadow: 3px 2px 5px gray;
-    background: #FCF8F8;
+    background: #fcf8f8;
     font-family: var(--font-heading);
 }
 
@@ -10,6 +10,11 @@
 }
 
 .Brand {
-    font-weight: 800;
-    text-shadow: 2px 2px 2px lightgray;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.Brand img {
+    display: block;
 }
