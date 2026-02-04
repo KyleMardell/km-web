@@ -263,7 +263,13 @@ export default function Home() {
                                     />
                                 </div>
                                 <p className={styles.projectTitle}>
-                                    Manchester Vegan Guide
+                                    Manchester Vegan Guide <br />
+                                    <small>
+                                        Vegan and vegetarian restaurant
+                                        directory <br />
+                                        (currently 50+ visitors and 1200+
+                                        impressions per month)
+                                    </small>
                                 </p>
                             </Link>
                             <Link
@@ -273,7 +279,7 @@ export default function Home() {
                                 className={styles.projectCard}>
                                 <div className={styles.projectImage}>
                                     <Image
-                                        src="/images/projects/althairscreenshot.webp" // add a screenshot of the site here
+                                        src="/images/projects/althair.webp"
                                         alt="Alt Hair Salon website"
                                         width={1200}
                                         height={800}
@@ -281,7 +287,31 @@ export default function Home() {
                                     />
                                 </div>
                                 <p className={styles.projectTitle}>
-                                    Alt Hair Salon
+                                    Alt Hair Salon <br />
+                                    <small>Example hair salon website</small>
+                                </p>
+                            </Link>
+                            <Link
+                                href="https://movietracker.kylemardell.me/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.projectCard}>
+                                <div className={styles.projectImage}>
+                                    <Image
+                                        src="/images/projects/movietracker.webp"
+                                        alt="Movie tracker website"
+                                        width={1200}
+                                        height={800}
+                                        sizes="(max-width: 767px) 100vw, 50vw"
+                                    />
+                                </div>
+                                <p className={styles.projectTitle}>
+                                    Movie Tracker App <br />
+                                    <small>
+                                        Find out where movies are streaming{" "}
+                                        <br />
+                                        (personal app, sign up if you like)
+                                    </small>
                                 </p>
                             </Link>
                         </div>

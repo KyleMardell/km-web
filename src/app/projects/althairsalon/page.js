@@ -46,7 +46,7 @@ const AltHairPage = () => {
                             className="d-flex align-items-center justify-content-center text-center">
                             <h1 className={styles.BussName}>Alt Hair</h1>
                         </Col>
-                        <Col xs={8}>
+                        <Col xs={8} className="d-flex align-items-center justify-content-center text-center">
                             <h2 className={styles.Tagline}>
                                 Specialist Colour & Hair Extensions in Eccles,
                                 Manchester.

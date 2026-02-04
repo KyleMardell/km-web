@@ -12,7 +12,6 @@ export default function PrivacyPolicyPage() {
     return (
         <Container>
             <HeroSection />
-
             <Row className={`${styles.firstSection} my-5`}>
                 <Col className="px-md-5">
                     <Row className="my-5 text-center">

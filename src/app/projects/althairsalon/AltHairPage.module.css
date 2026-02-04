@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Poiret+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Poiret+One&display=swap');
 
 .AppWrapper {
     background-color: #ebd6fb;
@@ -24,11 +24,8 @@
 }
 
 .BussName {
-    font-family: "Lavishly Yours", cursive;
+    font-family: "Limelight", sans-serif;
     font-size: 4rem;
-    text-shadow:
-        0 0 8px rgba(255, 201, 0, 0.5),
-        0 0 16px rgba(255, 201, 0, 0.5);
 }
 
 .Tagline {
@@ -36,7 +33,7 @@
 }
 
 .HeadFont {
-    font-family: "Lavishly Yours", cursive;
+    font-family: "Limelight", sans-serif;
     font-size: 2.2rem;
     letter-spacing: 1;
 }
@@ -112,8 +109,7 @@
 }
 
 .ReviewName {
-    font-family: "Lavishly Yours", cursive;
-    font-weight: 800;
+    font-family: "Limelight", sans-serif;
     letter-spacing: 0.5;
 }
 
