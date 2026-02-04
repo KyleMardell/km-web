@@ -2,9 +2,11 @@
 
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
+
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const NavBar = () => {
     const { expanded, setExpanded, ref } = useClickOutsideToggle();
@@ -17,7 +19,7 @@ const NavBar = () => {
             expand="lg"
             fixed="top">
             <Container>
-                <Navbar.Brand className={styles.Brand} href="/">
+                <Navbar.Brand className={styles.Brand} as={Link} href="/">
                     <Image
                         src="/images/kmweb-logo.webp"
                         alt="KM Web logo"
@@ -33,15 +35,20 @@ const NavBar = () => {
                 />
                 <Navbar.Collapse id="basic-navbar-nav" className="text-center">
                     <Nav className="me-auto">
-                        <Nav.Link href="/" onClick={() => setExpanded(false)}>
+                        <Nav.Link
+                            as={Link}
+                            href="/"
+                            onClick={() => setExpanded(false)}>
                             Home
                         </Nav.Link>
                         <Nav.Link
+                            as={Link}
                             href="/services"
                             onClick={() => setExpanded(false)}>
                             Services
                         </Nav.Link>
                         <Nav.Link
+                            as={Link}
                             href="/contact"
                             onClick={() => setExpanded(false)}>
                             Contact
