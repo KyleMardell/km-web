@@ -273,7 +273,7 @@ export default function Home() {
                                 </p>
                             </Link>
                             <Link
-                                href="/projects/althairsalon"
+                                href="/althairsalon"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.projectCard}>
@@ -292,7 +292,7 @@ export default function Home() {
                                 </p>
                             </Link>
                             <Link
-                                href="https://movietracker.kylemardell.me/"
+                                href="https://movietracker.kylemardell.me"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.projectCard}>
