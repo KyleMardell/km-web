@@ -21,10 +21,14 @@ export default function Home() {
                     <Col>
                         <h1 className={`${styles.HeroTitle}`}>
                             Freelance Web Developer in Manchester
+                            <br />
+                            <span className={styles.HeroLocal}>
+                                Websites for Small & Local Businesses
+                            </span>
                         </h1>
                         <h2 className={`${styles.HeroName}`}>Kyle Mardell</h2>
                         <div>
-                            <FontWaveAnim text="Websites built around your business" />
+                            <FontWaveAnim text="Custom built around your business" />
                         </div>
                     </Col>
                 </Row>
@@ -35,12 +39,12 @@ export default function Home() {
                             <Col className={`${styles.ThinBorder}`}>
                                 <div data-aos="fade-right">
                                     <p>
+                                        I'm a Manchester-based freelance web
+                                        developer{" "}
                                         <strong>
-                                            I help businesses get online
+                                            helping small businesses get online
                                         </strong>{" "}
-                                        (or level up what they already have)
-                                        with websites designed around who they
-                                        are and what they need.
+                                        with fast, SEO-friendly websites.
                                     </p>
                                 </div>
                                 <div data-aos="fade-left">
@@ -83,7 +87,9 @@ export default function Home() {
                     <Col>
                         <Row>
                             <Col className="px-md-5">
-                                <h2 className="text-center my-5">What I Do</h2>
+                                <h2 className="text-center my-5">
+                                    Custom Website Design & Development Services
+                                </h2>
                                 <Row className="px-2 px-md-5">
                                     <Col xs={10}>
                                         <p
