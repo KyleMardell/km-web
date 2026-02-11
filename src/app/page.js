@@ -11,6 +11,7 @@ import laptopWebImg from "../../public/images/laptopweb.webp";
 import responsiveImg from "../../public/images/responsivedesign.webp";
 import laptopCloseImg from "../../public/images/laptopclose.webp";
 import constructionLaptopImg from "../../public/images/constructlaptop.webp";
+import TechLogoScroller from "./components/TechLogoScroller";
 
 export default function Home() {
     return (
@@ -184,6 +185,11 @@ export default function Home() {
                                     className={styles.inlineImage}
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
+                            </Col>
+                        </Row>
+                        <Row className="my-3 pb-5">
+                            <Col className="d-flex justify-content-center p4-5">
+                                <TechLogoScroller />
                             </Col>
                         </Row>
                     </Col>

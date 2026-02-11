@@ -1,0 +1,35 @@
+.TechWrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.TechTrack {
+    display: flex;
+    width: fit-content;
+    animation-name: tech-marquee-scroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.TechItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+}
+
+.TechItem img {
+    display: block;
+    object-fit: contain;
+}
+
+/* Animation */
+@keyframes tech-marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
