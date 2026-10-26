@@ -1,498 +1,199 @@
-import { Container, Row, Col } from "react-bootstrap";
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
-
+import portrait from "../../public/images/face.webp";
 import styles from "./page.module.css";
-import AOSWrapper from "./aos/AOSWrapper";
-import HeroSection from "./components/HeroSection";
-import FontWaveAnim from "./animations/FontWaveAnim";
+import HomeAOS from "./components/HomeAOS";
+import { pageMetadata } from "./lib/seo";
 
-import laptopWebImg from "../../public/images/laptopweb.webp";
-import responsiveImg from "../../public/images/responsivedesign.webp";
-import laptopCloseImg from "../../public/images/laptopclose.webp";
-import constructionLaptopImg from "../../public/images/constructlaptop.webp";
-import TechLogoScroller from "./components/TechLogoScroller";
+export const metadata = pageMetadata({
+    title: "Freelance Web Developer in Manchester",
+    description:
+        "I design and build custom websites for small and local businesses. Based in Manchester, I handle everything from setup and hosting to launch and support.",
+    path: "/",
+});
+
+const projects = [
+    {
+        name: "Astra HR",
+        type: "Business website",
+        href: "https://astrahr.co.uk/",
+        image: "/images/projects/astrahr.webp",
+        alt: "Astra HR homepage introducing its HR consultancy services",
+        width: 1200,
+        height: 800,
+        description: "Business website for an HR consultancy supporting businesses with employee relations and workplace matters.",
+    },
+    {
+        name: "Manchester Vegan Guide",
+        type: "Restaurant directory",
+        href: "https://manchesterveganguide.com/",
+        image: "/images/projects/mancveganscreen.webp",
+        alt: "Manchester Vegan Guide restaurant directory homepage",
+        width: 3810,
+        height: 1903,
+        description: "Vegan and vegetarian restaurant directory",
+    },
+    {
+        name: "Movie Tracker App",
+        type: "Personal project",
+        href: "https://movietracker.kylemardell.me",
+        image: "/images/projects/movietracker.webp",
+        alt: "Movie Tracker app for finding where movies are streaming",
+        width: 3808,
+        height: 1896,
+        description: "Find out where movies are streaming (personal project, sign up if you like)",
+    },
+];
+
+const services = [
+    { title: "Web Design", description: "A custom design tailored to your business, with clear layouts and easy navigation." },
+    { title: "Development", description: "Mobile-friendly websites built with performance and search visibility in mind." },
+    { title: "Hosting", description: "Website hosting and deployment, with domain setup and management available." },
+    { title: "Technical Support", description: "Ongoing technical maintenance to keep your site running, with content updates available separately." },
+];
 
 export default function Home() {
     return (
-        <AOSWrapper>
-            <Container>
-                <HeroSection />
-                <Row className={`${styles.firstSection} text-center`}>
-                    <Col>
-                        <h1 className={`${styles.HeroTitle}`}>
-                            Freelance Web Developer in Manchester
-                            <br />
-                            <span className={styles.HeroLocal}>
-                                Websites for Small & Local Businesses
-                            </span>
-                        </h1>
-                        <h2 className={`${styles.HeroName}`}>Kyle Mardell</h2>
+        <div className={styles.home} data-home-content>
+            <section className={styles.hero} aria-labelledby="home-heading">
+                <div className={`container ${styles.heroGrid}`}>
+                    <div data-aos="fade-right" data-aos-offset="0">
+                        <p className={styles.eyebrow}>Independent web design &amp; development</p>
+                        <h1 id="home-heading">Freelance Web Developer in Manchester</h1>
+                        <p className={styles.heroIntro}>
+                            Professional websites for small businesses, built to look good,
+                            work smoothly and help you get enquiries.
+                        </p>
+                        <div className={styles.heroOffer}>
+                            <p>Websites from <strong>£39<span>/month</span></strong></p>
+                            <p className={styles.heroTerms}>No upfront website build fee</p>
+                        </div>
+                        <div className={styles.actions}>
+                            <Link href="/contact/" className="button-primary">Get in Touch</Link>
+                        </div>
+                    </div>
+                    <figure className={styles.portraitCard} data-aos="fade-left" data-aos-offset="0">
+                        <div className={styles.portraitFrame}>
+                            <Image src={portrait} alt="Kyle Mardell, freelance web developer" sizes="(max-width: 767px) 96px, 320px" priority fetchPriority="high" />
+                        </div>
+                        <figcaption>
+                            <strong>Kyle Mardell</strong>
+                            <span>Websites for small &amp; local businesses</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="projects" className={`surface-dark ${styles.portfolio}`} aria-labelledby="projects-heading">
+                <div className="container">
+                    <div className={styles.sectionHeading} data-aos="fade-up">
                         <div>
-                            <FontWaveAnim text="Custom built around your business" />
+                            <h2 id="projects-heading">A few things I&apos;ve built.</h2>
                         </div>
-                    </Col>
-                </Row>
+                        <p>Business websites, useful directories and personal projects.</p>
+                    </div>
+                    <div className={styles.projectsGrid}>
+                        {projects.map((project, index) => (
+                            <article className={styles.projectCard} key={project.name} data-aos="fade-up" data-aos-delay={index * 100}>
+                                <a href={project.href} target="_blank" rel="noopener noreferrer" className={styles.projectLink}>
+                                    <div className={styles.projectImage}>
+                                        <picture>
+                                        <source
+                                            type="image/webp"
+                                            srcSet={[360, 720, 1200].map((width) => `${project.image.replace(".webp", `-${width}.webp`)} ${width}w`).join(", ")}
+                                            sizes="(max-width: 767px) calc(100vw - 42px), (max-width: 1099px) calc((100vw - 88px) / 2), 340px"
+                                        />
+                                        <Image src={project.image} alt={project.alt} width={project.width} height={project.height} sizes="(max-width: 767px) 100vw, (max-width: 1099px) 50vw, 33vw" />
+                                        </picture>
+                                    </div>
+                                    <div className={styles.projectInfo}>
+                                        <p className={styles.projectType}>{project.type}</p>
+                                        <h3>{project.name}</h3>
+                                        <p>{project.description}</p>
+                                        <span className={styles.projectAction}>Visit website <span aria-hidden="true">↗</span><span className={styles.srOnly}> (opens in a new tab)</span></span>
+                                    </div>
+                                </a>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
-                <Row className={styles.subSectionTransparent}>
-                    <Col>
-                        <Row>
-                            <Col className={`${styles.ThinBorder}`}>
-                                <div data-aos="fade-right">
-                                    <p>
-                                        I'm a Manchester-based freelance web
-                                        developer{" "}
-                                        <strong>
-                                            helping small businesses get online
-                                        </strong>{" "}
-                                        with fast, SEO-friendly websites.
-                                    </p>
-                                </div>
-                                <div data-aos="fade-left">
-                                    <p className={`text-end my-5`}>
-                                        Whether that's something clean and
-                                        straightforward or something more modern
-                                        and expressive,{" "}
-                                        <strong>
-                                            I'll build a site that fits your
-                                            business,
-                                        </strong>{" "}
-                                        and handle everything technical along
-                                        the way.
-                                    </p>
-                                </div>
-                                <div data-aos="fade-up">
-                                    <p className={`text-center`}>
-                                        <strong>
-                                            Custom websites - Designed to look
-                                            right, work properly, and grow with
-                                            you.
-                                        </strong>
-                                    </p>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row className={styles.subSectionTransparentSmall}>
-                            <Col className="text-center mt-5">
-                                <Link
-                                    href="/contact"
-                                    className={styles.CtaButton}>
-                                    <strong>Get In Touch</strong>
-                                </Link>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-
-                <Row className={`${styles.subSectionBlueTop} py-5`}>
-                    <Col>
-                        <Row>
-                            <Col className="px-md-5">
-                                <h2 className="text-center my-5">
-                                    Custom Website Design & Development Services
-                                </h2>
-                                <Row className="px-2 px-md-5">
-                                    <Col xs={10}>
-                                        <p
-                                            className={`${styles.ThinBorderSecond}`}
-                                            data-aos="flip-left">
-                                            I design and build custom websites,
-                                            handling the full process from start
-                                            to finish.
-                                        </p>
-                                    </Col>
-                                    <Col xs={2}></Col>
-                                </Row>
-                                <Row className="px-2 my-4 px-md-5">
-                                    <Col xs={2}></Col>
-                                    <Col xs={10}>
-                                        <p
-                                            className={`${styles.ThinBorderSecond}`}
-                                            data-aos="flip-right">
-                                            A lot of business owners know they
-                                            need a website but aren't sure where
-                                            to start, what they actually need,
-                                            or how any of it works.
-                                        </p>
-                                    </Col>
-                                </Row>
-                                <Row className="px-2 px-md-5">
-                                    <Col xs={10}>
-                                        <p
-                                            className={`${styles.ThinBorderSecond}`}
-                                            data-aos="flip-left">
-                                            That's where I come in. I take care
-                                            of the setup, hosting, deployment,
-                                            and ongoing support, so you can
-                                            focus on running your business.
-                                        </p>
-                                    </Col>
-                                    <Col xs={2}></Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                        <Row className="my-5 py-5">
-                            <Col className="d-flex justify-content-center">
-                                <Image
-                                    src={laptopWebImg}
-                                    alt="A laptop with a website on it"
-                                    className={styles.inlineImage}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority
-                                />
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-
-                <Row className={`${styles.subSectionPurpleMid}`}>
-                    <Col>
-                        <Row>
-                            <Col className="px-3 px-md-5">
-                                <p className="my-5 pt-5 text-center">
-                                    <strong>
-                                        Every site I build is designed
-                                        specifically for the business.
-                                    </strong>
-                                </p>
-                                <ul>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>Fully responsive</strong> and
-                                        works properly on phones, tablets, and
-                                        desktops
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>Built with performance</strong>{" "}
-                                        and search visibility in mind
-                                    </li>
-                                    <li data-aos="fade-left">
-                                        <strong>Designed to last</strong>, with
-                                        room to grow with your business
-                                    </li>
-                                </ul>
-                                <p className="my-5" data-aos="zoom-in-up">
-                                    The goal isn't just to “have a website” —
-                                    it's to have one that feels right for your
-                                    business and works for the people using it.
-                                </p>
-                            </Col>
-                        </Row>
-                        <Row className="my-3 pb-5">
-                            <Col className="d-flex justify-content-center">
-                                <Image
-                                    src={responsiveImg}
-                                    alt="A laptop, tablet and phone showing the same website"
-                                    className={styles.inlineImage}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
-                            </Col>
-                        </Row>
-                        <Row className="my-3 pb-5">
-                            <Col className="d-flex justify-content-center p4-5">
-                                <TechLogoScroller />
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-
-                <Row className={styles.subSectionBlueBottom}>
-                    <Col>
-                        <Row>
-                            <Col className="px-3 px-md-5">
-                                <h2 className="text-center my-5">
-                                    Who I Work With
-                                </h2>
-                                <p className="my-5">
-                                    <strong>
-                                        I mainly work with small and local
-                                        businesses, including:
-                                    </strong>
-                                </p>
-                                <ul>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>Tradespeople</strong>
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>
-                                            Cafés and independent shops
-                                        </strong>
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>
-                                            Community groups and villages
-                                        </strong>
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>
-                                            Businesses with no website,
-                                        </strong>{" "}
-                                        or one that no longer reflects them
-                                    </li>
-                                </ul>
-                                <p className="my-5" data-aos="zoom-in-up">
-                                    That said, the approach is always the same,
-                                    <strong>
-                                        {" "}
-                                        understand the business first
-                                    </strong>
-                                    , then design something that fits.{" "}
-                                    <strong>
-                                        No one-size-fits-all solutions.
-                                    </strong>
-                                </p>
-                            </Col>
-                        </Row>
-                        <Row className="my-5 py-5">
-                            <Col className="d-flex justify-content-center">
-                                <Image
-                                    src={laptopCloseImg}
-                                    alt="A laptop, phone and notebook on a desk"
-                                    className={styles.inlineImage}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-
-                <Row className={styles.subSectionTransparent}>
-                    <Col className="px-3 px-md-5">
-                        <h2 className="text-center my-5">Projects</h2>
-
-                        <div className={styles.projectsGrid}>
-                            <Link
-                                href="https://manchesterveganguide.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.projectCard}>
-                                <div className={styles.projectImage}>
-                                    <Image
-                                        src="/images/projects/mancveganscreen.webp"
-                                        alt="Client website project"
-                                        width={1200}
-                                        height={800}
-                                        sizes="(max-width: 767px) 100vw, 50vw"
-                                    />
-                                </div>
-                                <p className={styles.projectTitle}>
-                                    Manchester Vegan Guide <br />
-                                    <small>
-                                        Vegan and vegetarian restaurant
-                                        directory <br />
-                                        (currently 50+ visitors and 1200+
-                                        impressions per month)
-                                    </small>
-                                </p>
-                            </Link>
-                            <Link
-                                href="/althairsalon"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.projectCard}>
-                                <div className={styles.projectImage}>
-                                    <Image
-                                        src="/images/projects/althair.webp"
-                                        alt="Alt Hair Salon website"
-                                        width={1200}
-                                        height={800}
-                                        sizes="(max-width: 767px) 100vw, 50vw"
-                                    />
-                                </div>
-                                <p className={styles.projectTitle}>
-                                    Alt Hair Salon <br />
-                                    <small>Example hair salon website</small>
-                                </p>
-                            </Link>
-                            <Link
-                                href="https://movietracker.kylemardell.me"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.projectCard}>
-                                <div className={styles.projectImage}>
-                                    <Image
-                                        src="/images/projects/movietracker.webp"
-                                        alt="Movie tracker website"
-                                        width={1200}
-                                        height={800}
-                                        sizes="(max-width: 767px) 100vw, 50vw"
-                                    />
-                                </div>
-                                <p className={styles.projectTitle}>
-                                    Movie Tracker App <br />
-                                    <small>
-                                        Find out where movies are streaming{" "}
-                                        <br />
-                                        (personal app, sign up if you like)
-                                    </small>
-                                </p>
-                            </Link>
+            <section className={styles.section} aria-labelledby="services-heading">
+                <div className="container">
+                    <div className={styles.sectionHeading} data-aos="fade-up">
+                        <div>
+                            <p className={styles.eyebrow}>From first idea to launch</p>
+                            <h2 id="services-heading">Small business website design, without the technical headache.</h2>
                         </div>
-                    </Col>
-                </Row>
+                        <p>I design and build custom websites, handling the setup, hosting, deployment and ongoing support.</p>
+                    </div>
+                    <div className={styles.servicesGrid}>
+                        {services.map((service, index) => (
+                            <article className={styles.serviceCard} key={service.title} data-aos="fade-up" data-aos-delay={index * 100}>
+                                <h3>{service.title}</h3>
+                                <p>{service.description}</p>
+                            </article>
+                        ))}
+                    </div>
+                    <Link href="/services/" className={styles.textLink}>Explore my services <span aria-hidden="true">→</span></Link>
+                </div>
+            </section>
 
-                <Row className={styles.subSectionBlueTop}>
-                    <Col>
-                        <Row>
-                            <h2 className="text-center my-5 py-lg-5">
-                                About Me
-                            </h2>
-                            <Col className={`${styles.ThinBorder}`}>
-                                <p
-                                    className="m-1 py-1 py-lg-3"
-                                    data-aos="zoom-in-right">
-                                    I am a web developer based in Eccles,
-                                    Manchester, with a passion for making
-                                    functional, good looking websites. I work
-                                    across full stack projects, care a lot about
-                                    SEO, and specialise in helping small
-                                    businesses get online.
-                                </p>
-                                <p
-                                    className="m-1 py-1 py-lg-3 text-end"
-                                    data-aos="zoom-in-left">
-                                    I started doing this because I wanted to
-                                    help local businesses build better online
-                                    presences.
-                                </p>
-                                <p
-                                    className="m-1 py-1 py-lg-3"
-                                    data-aos="zoom-in-right">
-                                    I've seen plenty of businesses with websites
-                                    that don't really represent them or no
-                                    website at all, and thought, this could be
-                                    so much better. Not just visually, but in
-                                    how it works and how people experience it.
-                                </p>
-                                <p
-                                    className="m-1 py-1 py-lg-3 text-end"
-                                    data-aos="zoom-in-left">
-                                    Good websites today need to be intuitive,
-                                    easy to navigate, and suited to the type of
-                                    business they represent. Some businesses
-                                    benefit from clean, information-focused
-                                    designs. Others suit a more modern,
-                                    animated, or expressive approach. I enjoy
-                                    working across that spectrum and choosing
-                                    what actually makes sense for each project.
-                                </p>
-                                <p
-                                    className="m-1 py-1 py-lg-3 text-center"
-                                    data-aos="zoom-in-right">
-                                    I want local businesses to have a website
-                                    they feel confident sharing and a local
-                                    person they can trust to build and support
-                                    it.
-                                </p>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
+            <section className={`${styles.section} ${styles.packageSection}`} aria-labelledby="package-heading">
+                <div className={`container ${styles.packageGrid}`}>
+                    <div className={`surface-dark ${styles.packageIntro}`} data-aos="fade-up">
+                        <p className={styles.eyebrow}>The small business website package</p>
+                        <h2 id="package-heading">A proper website.<br />A manageable monthly cost.</h2>
+                        <p>A straightforward way to get your business online, with the essentials taken care of.</p>
+                        <p className={styles.price}>£39<span> / month</span></p>
+                        <p className={styles.packageTerms}>No upfront website build fee.<br />Six month minimum commitment.</p>
+                        <Link href="/contact/" className="button-primary">Let&apos;s talk about your website <span aria-hidden="true">→</span></Link>
+                    </div>
+                    <div className={styles.packageDetails} data-aos="fade-left" data-aos-delay="100">
+                        <h3>What&apos;s included</h3>
+                        <ul className={styles.inclusions}>
+                            <li>Up to five pages</li>
+                            <li>Mobile friendly responsive design</li>
+                            <li>Hosting included</li>
+                            <li>Essential technical maintenance included</li>
+                            <li>Basic on page SEO setup</li>
+                        </ul>
+                        <div className={styles.packageNotes}>
+                            <p>Domain registration and renewal charged separately. Content changes charged separately.</p>
+                            <p>Larger or more complex projects quoted individually.</p>
+                        </div>
+                        <Link href="/services/" className={styles.textLink}>More about my services <span aria-hidden="true">→</span></Link>
+                    </div>
+                </div>
+            </section>
 
-                <Row className={styles.subSectionPurpleBottom}>
-                    <Col>
-                        <Row>
-                            <Col className="py-5 px-3 px-md-5">
-                                <h2 className="text-center my-5">
-                                    How It Works
-                                </h2>
-                                <p className="my-5">
-                                    <strong>
-                                        I keep the process clear and
-                                        collaborative, without over complicating
-                                        things.
-                                    </strong>
-                                </p>
-                                <ol>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>Initial chat & planning</strong>{" "}
-                                        <br />
-                                        We talk through your business, your
-                                        goals, and what the website needs to do.
-                                        I'll then provide a clear quote.
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>
-                                            Content & design direction
-                                        </strong>{" "}
-                                        <br />
-                                        You'll get a Google Drive folder to
-                                        upload logos, images, and content. I
-                                        will also send you a short form that
-                                        lets me know about your business and
-                                        website design preferences.
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>Design & review</strong> <br />I
-                                        design the homepage first so we can lock
-                                        in the look and feel before building the
-                                        rest of the site.
-                                    </li>
-                                    <li className="mb-3" data-aos="fade-left">
-                                        <strong>Build, refine & launch</strong>{" "}
-                                        <br />
-                                        Once everything's approved, I build the
-                                        full site, make final tweaks, and deploy
-                                        it. I also handle hosting, domains, and
-                                        ongoing support.
-                                    </li>
-                                </ol>
-                                <p className="my-5">
-                                    <strong>
-                                        You're involved where it matters
-                                    </strong>
-                                    , but you're never expected to deal with the
-                                    technical side.
-                                </p>
-                            </Col>
-                        </Row>
-                        <Row className="my-5">
-                            <Col className="d-flex justify-content-center">
-                                <Image
-                                    src={constructionLaptopImg}
-                                    alt="A laptop with a small, under construction sign, on the keyboard"
-                                    className={styles.inlineImage}
-                                />
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
+            <section className={styles.section} aria-labelledby="about-heading">
+                <div className={`container ${styles.aboutGrid}`}>
+                    <div className={styles.aboutIdentity} data-aos="fade-right">
+                        <Image src={portrait} alt="Kyle Mardell" width={112} height={112} className={styles.aboutPortrait} />
+                        <p className={styles.eyebrow}>A local, independent developer</p>
+                        <h2 id="about-heading">Hi, I&apos;m Kyle.</h2>
+                    </div>
+                    <div className={styles.aboutCopy} data-aos="fade-left">
+                        <p>I&apos;m a freelance web developer based in Eccles, Manchester. I enjoy building practical, good looking websites and helping small businesses get online. I work with businesses across the UK, with a focus on straightforward design, usability and SEO.</p>
+                        <p>I mainly work with small and local businesses, including tradespeople, cafés, independent shops and community groups, whether they need their first website or a replacement for one that no longer reflects them.</p>
+                        <p>I design the homepage first so we can agree on the look and feel before building the rest of the site. You&apos;re involved where it matters, but you&apos;re never expected to deal with the technical side.</p>
+                        <p>I want local businesses to have a website they feel confident sharing and a local person they can trust to build and support it.</p>
+                    </div>
+                </div>
+            </section>
 
-                <Row className={styles.subSectionTransparent}>
-                    <Col>
-                        <Row>
-                            <Col
-                                className={`${styles.ThinBorder}`}
-                                data-aos="flip-down">
-                                <p>
-                                    <strong>
-                                        If you're thinking about getting a
-                                        website
-                                    </strong>
-                                    , improving the one you already have or just
-                                    want someone who'll explain things clearly
-                                    and build something that actually suits your
-                                    business,{" "}
-                                    <strong>I'd be happy to chat</strong>
-                                </p>
-                                <p className="text-end mt-4">
-                                    <strong>No pressure, no hard sell</strong>,
-                                    just a conversation about what you need and
-                                    what would work best for your business.
-                                </p>
-                            </Col>
-                        </Row>
-                        <Row className={styles.subSectionTransparentSmall}>
-                            <Col className="text-center mt-5">
-                                <Link
-                                    href="/contact"
-                                    className={styles.CtaButton}>
-                                    <strong>Get In Touch</strong>
-                                </Link>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
-        </AOSWrapper>
+            <section className={styles.contactSection} aria-labelledby="contact-heading">
+                <div className={`container ${styles.contactInner}`} data-aos="fade-up">
+                    <p className={styles.eyebrow}>Let&apos;s start with a conversation</p>
+                    <h2 id="contact-heading">Thinking about a website?</h2>
+                    <p>Whether it&apos;s your first website or a refresh of an existing one, I&apos;d be happy to chat about what you need.</p>
+                    <Link href="/contact/" className="button-primary">Get in Touch <span aria-hidden="true">→</span></Link>
+                    <p className={styles.contactNote}>No pressure, no hard sell.</p>
+                </div>
+            </section>
+            <HomeAOS />
+        </div>
     );
 }

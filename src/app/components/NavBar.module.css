@@ -1,12 +1,37 @@
 .NavBar {
-    box-shadow: 3px 2px 5px gray;
-    background: #fcf8f8;
+    min-height: var(--nav-height);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    background: var(--background);
     font-family: var(--font-heading);
+    --bs-navbar-color: var(--foreground);
+    --bs-navbar-hover-color: var(--color-action);
+    --bs-navbar-active-color: var(--color-action);
 }
 
 .DropIcon {
-    box-shadow: 1px 1px 2px gray;
-    border-color: gray;
+    min-width: 44px;
+    min-height: 44px;
+    box-shadow: none;
+    border-radius: var(--radius-control);
+    border-color: var(--color-border);
+}
+
+.NavBar :global(.nav-link) {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: var(--space-4);
+    text-decoration: none;
+}
+
+.NavBar :global(.nav-link[aria-current="page"]) {
+    font-weight: 600;
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-copper);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.45em;
 }
 
 .Brand {

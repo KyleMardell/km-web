@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,74 +7,199 @@
 :root {
     --background: #FCF8F8;
     --foreground: #171717;
+    --color-text: #333333;
+    --color-dark: #211A33;
+    --color-secondary: #35284F;
+    --color-copper: #B87953;
+    --color-copper-text: #85502F;
+    --color-copper-border: rgba(184, 121, 83, 0.65);
+    --color-silver: #C8CFDA;
+    --color-heading: var(--color-dark);
+    --color-action: var(--color-dark);
+    --color-brand: var(--color-silver);
+    /* Compatibility aliases keep existing page styles on the shared palette. */
+    --color-lavender: var(--color-silver);
+    --color-border-dark: rgba(200, 207, 218, 0.3);
+    --color-alternate: var(--background);
+    --color-surface: #FFFFFF;
+    --color-border: var(--color-silver);
+    --color-brand-wash: rgba(200, 207, 218, 0.18);
+    --color-lavender-wash: var(--color-brand-wash);
     --font-body: system-ui, sans-serif;
     --font-heading: system-ui, sans-serif;
+    --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-h1: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+    --text-h2: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
+    --text-h3: clamp(1.375rem, 1.125rem + 1vw, 1.625rem);
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+    --section-space: clamp(3rem, 6vw, 5rem);
+    --container-width: 72rem;
+    --reading-width: 42.5rem;
+    --page-gutter: 1.25rem;
+    --nav-height: 4rem;
+    --radius-control: 0.75rem;
+    --radius-card: 1rem;
+    --shadow-soft: 0 4px 16px rgba(33, 26, 51, 0.06);
+    --shadow-card: 0 6px 18px rgba(53, 40, 79, 0.09);
+    --shadow-card-hover: 0 10px 24px rgba(53, 40, 79, 0.15);
+    --shadow-image: 0 4px 12px rgba(33, 26, 51, 0.18);
+    --shadow-button: 0 3px 8px rgba(53, 40, 79, 0.16);
+    --shadow-button-hover: 0 5px 12px rgba(53, 40, 79, 0.23);
+    --shadow-heading: 0 2px 2px rgba(53, 40, 79, 0.08);
+    --transition-fast: 160ms ease;
+    --bs-body-color: var(--color-text);
+    --bs-body-bg: var(--background);
+    --bs-border-color: var(--color-border);
+    --bs-primary: var(--color-action);
+    --bs-primary-rgb: 33, 26, 51;
 }
 
-html,
-body {
+html { scroll-padding-top: calc(var(--nav-height) + var(--space-4)); }
+.skip-link {
+    position: fixed;
+    top: var(--space-3);
+    left: var(--page-gutter);
+    z-index: 1100;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-control);
+    background: var(--color-surface);
+    color: var(--color-dark);
+    transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+html, body {
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden;
     font-family: var(--font-body), sans-serif;
     background-color: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 body {
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
+    overflow-wrap: break-word;
 }
-
 main {
     width: 100%;
-    max-width: 100vw;
+    min-width: 0;
     flex: 1;
-    padding-top: 56px; /* navbar height */
+    padding-top: var(--nav-height);
     background-color: var(--background);
+    /* Prevent existing slide-in effects from widening the page. */
+    overflow-x: clip;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    --bs-gutter-x: calc(var(--page-gutter) * 2);
+}
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading), sans-serif;
     font-weight: 600;
-    line-height: 1.3;
-    color: #111;
+    line-height: 1.25;
+    color: var(--color-heading);
+    text-wrap: balance;
 }
-
-p {
-    font-size: 18px;
+h1 { font-size: var(--text-h1); font-weight: 700; }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+p, li {
+    font-size: var(--text-body);
     line-height: 1.6;
-    color: #333;
+    color: var(--color-text);
 }
-
 a {
-    color: inherit;
+    color: var(--color-action);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+}
+a:hover { color: var(--color-dark); }
+main :is(p, li) a:not(.button-primary) { text-decoration-line: underline; }
+:focus-visible {
+    outline: 3px solid var(--color-action) !important;
+    outline-offset: 4px;
+}
+.form-control, .form-check-input { border-radius: var(--radius-control); }
+.form-control:focus, .form-check-input:focus {
+    border-color: var(--color-action);
+    box-shadow: 0 0 0 0.2rem rgba(33, 26, 51, 0.2);
+}
+.form-check-input:checked {
+    background-color: var(--color-action);
+    border-color: var(--color-action);
+}
+.button-primary, .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    padding: var(--space-3) var(--space-6);
+    border: 1px solid var(--color-action);
+    border-radius: var(--radius-control);
+    background: var(--color-action);
+    color: var(--color-surface);
+    font: 600 1rem / 1.5 var(--font-heading), sans-serif;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    --bs-btn-disabled-bg: var(--color-action);
+    --bs-btn-disabled-border-color: var(--color-action);
+    --bs-btn-disabled-color: var(--color-surface);
+}
+:is(.button-primary, .btn-primary):is(:hover, :active, :focus-visible) {
+    background: var(--color-dark);
+    border-color: var(--color-dark);
+    color: var(--color-surface);
     text-decoration: none;
 }
-
-@media (max-width: 768px) {
-    p {
-        font-size: 16px;
-    }
+/* Opt-in surfaces for later work; existing sections keep their current roles. */
+.surface-alternate { background: var(--color-alternate); }
+.surface-dark {
+    background: var(--color-dark);
+    color: var(--color-surface);
+    --foreground: var(--color-surface);
+    --color-heading: var(--color-surface);
+    --color-text: var(--color-silver);
+    --color-action: var(--color-silver);
 }
-
-@media (min-width: 768px) {
-    main {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
+.surface-dark .button-primary {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-dark);
 }
-
-@media (min-width: 1200px) {
-    main {
-        padding-left: 20%;
-        padding-right: 20%;
+.surface-dark a:hover { color: var(--color-surface); }
+.surface-dark .button-primary:is(:hover, :active, :focus-visible) {
+    background: var(--color-surface);
+    border-color: var(--color-surface);
+    color: var(--color-dark);
+}
+@media (min-width: 768px) { :root { --page-gutter: 2rem; } }
+@media (min-width: 1200px) { :root { --page-gutter: 2.5rem; } }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
     }
 }

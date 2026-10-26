@@ -1,4 +1,10 @@
 .PageFooter {
-    background: transparent;
+    background: var(--background);
+    border-top: 1px solid var(--color-border);
     z-index: 2;
+}
+
+.PageFooter p {
+    font-size: 1rem;
+    color: var(--color-text);
 }

@@ -1,278 +1,164 @@
 "use client";
 
-import React, { useState } from "react";
-import { Col, Container, Form, Row, Button } from "react-bootstrap";
+import { useRef, useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
+import ContactAOS from "./ContactAOS";
 import styles from "./ContactPage.module.css";
-import HeroSection from "../components/HeroSection";
 
-const ContactPage = () => {
+function validateContact({ name, email, phone, requestCallback }) {
+    const errors = {};
+    const emailValue = email.trim();
+    const phoneValue = phone.trim();
+    if (!name.trim()) errors.name = "Please enter your name.";
+    if (emailValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        errors.email = "Please enter a valid email address.";
+    }
+    if (phoneValue) {
+        const digits = phoneValue.replace(/\D/g, "");
+        if (!/^\+?[\d\s().-]+$/.test(phoneValue) || digits.length < 7 || digits.length > 15) {
+            errors.phone = "Please enter a valid phone number. Spaces, brackets, hyphens and a leading + are accepted.";
+        }
+    }
+    if (!emailValue && !phoneValue) {
+        errors.email = "Please provide an email address or phone number.";
+        errors.phone = "Please provide a phone number or email address.";
+    }
+    if (requestCallback && !phoneValue) errors.phone = "Please enter a phone number to request a call back.";
+    return errors;
+}
+
+export default function ContactPage() {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [name, setName] = useState("");
     const [message, setMessage] = useState("");
     const [requestCallback, setRequestCallback] = useState(false);
-    const [validated, setValidated] = useState(false);
+    const [attempted, setAttempted] = useState(false);
     const [sending, setSending] = useState(false);
+    const [status, setStatus] = useState({ kind: "idle", text: "" });
+    const formRef = useRef(null);
+    const sendingRef = useRef(false);
+    const values = { name, email, phone, requestCallback };
+    const errors = attempted ? validateContact(values) : {};
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const update = (setter, value) => {
+        setter(value);
+        setStatus({ kind: "idle", text: "" });
+    };
 
-        let formIsValid = true;
-        setValidated(false);
-
-        if (!name.trim()) formIsValid = false;
-        if (phone && !/^\d+$/.test(phone)) formIsValid = false;
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-            formIsValid = false;
-        if (!email && !phone) formIsValid = false;
-        if (requestCallback && !phone) formIsValid = false;
-
-        if (!formIsValid) {
-            setValidated(true);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (sendingRef.current) return;
+        const validationErrors = validateContact(values);
+        setAttempted(true);
+        if (Object.keys(validationErrors).length) {
+            setStatus({ kind: "validation", text: "Please check the highlighted fields below." });
+            const firstField = Object.keys(validationErrors)[0];
+            requestAnimationFrame(() => formRef.current?.elements.namedItem(firstField)?.focus());
             return;
         }
-
         const formData = {
-            name,
-            email,
-            phone,
+            name: name.trim(),
+            email: email.trim(),
+            phone: phone.trim(),
             message,
             requestCallback: requestCallback ? "Yes" : "No",
         };
-
+        sendingRef.current = true;
         setSending(true);
-
-        emailjs
-            .send(
+        setStatus({ kind: "sending", text: "Sending your enquiry..." });
+        try {
+            const result = await emailjs.send(
                 "service_ctinitc",
                 "template_alsk32e",
                 formData,
                 "AB1Q3v3G9VUxrcl5Y",
-            )
-            .then(
-                (result) => {
-                    console.log("Email sent:", result.text);
-                    alert("Thank you! Your message has been sent.");
-                    // Clear form
-                    setName("");
-                    setEmail("");
-                    setPhone("");
-                    setMessage("");
-                    setRequestCallback(false);
-                    setValidated(false);
-                    setSending(false);
-                },
-                (error) => {
-                    console.error("Email error:", error.text);
-                    alert(
-                        "Sorry, there was an error sending your message. Please try again.",
-                    );
-                    setSending(false);
-                },
             );
+            if (result.status !== 200) throw new Error("Submission was not confirmed");
+            setName("");
+            setEmail("");
+            setPhone("");
+            setMessage("");
+            setRequestCallback(false);
+            setAttempted(false);
+            setStatus({ kind: "success", text: "Thank you! Your enquiry has been sent." });
+        } catch {
+            setStatus({ kind: "failure", text: "Your enquiry could not be sent. Please try again, or contact me using the email address or phone number on this page. Your details have been kept in the form." });
+        } finally {
+            sendingRef.current = false;
+            setSending(false);
+        }
     };
 
     return (
-        <Container>
-            <HeroSection />
-            <Row className={`${styles.firstSection} my-5`}>
-                <Col className="px-md-5">
-                    <Row className="my-5 text-center">
-                        <Col>
-                            <h1>Contact Me</h1>
-                        </Col>
-                    </Row>
-                    <Row className="px-2 px-md-5">
-                        <Col
-                            className={`mx-md-5 px-md-4  ${styles.ThinBorder}`}>
-                            <p className="m-0 px-2 py-md-2">
-                                <strong>
-                                    If you're thinking about a website, whether
-                                    it's your first one, a refresh, or just an
-                                    idea you want to talk through, feel free to
-                                    get in touch or request a call back.
-                                </strong>
-                            </p>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-
-            <Row className={`${styles.subSectionTransparent}`}>
-                <Col className="px-md-5 text-center">
-                    <p>
-                        <strong>Email:</strong>{" "}
-                        <a href="mailto:kyle@kmweb.co.uk">kyle@kmweb.co.uk</a>
-                    </p>
-                    <p>
-                        <strong>Phone/Text:</strong>{" "}
-                        <a href="tel:07766082304">07766 082304</a>
-                    </p>
-                </Col>
-            </Row>
-
-            <Row className={`${styles.subSectionBlue} my-5`}>
-                <Col className="px-md-5">
-                    <Row className="text-center my-5">
-                        <Col>
-                            <h2>Contact Form</h2>
-                            <p>
-                                <strong>
-                                    Get in touch or request a call back
-                                </strong>
-                            </p>
-                        </Col>
-                    </Row>
-                    <Row className="px-2 px-md-5 mb-5">
-                        <Col className="px-md-5">
-                            <Form
-                                noValidate
-                                validated={validated}
-                                onSubmit={handleSubmit}>
-                                <Form.Group
-                                    className="mb-3"
-                                    controlId="formName">
-                                    <Form.Label>Name</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        value={name}
-                                        onChange={(e) =>
-                                            setName(e.target.value)
-                                        }
-                                        required
-                                        isInvalid={validated && !name.trim()}
-                                    />
-                                    <Form.Control.Feedback type="invalid">
-                                        Name is required
-                                    </Form.Control.Feedback>
+        <div className={styles.contactPage} data-contact-content>
+            <section className={styles.intro} aria-labelledby="contact-heading">
+                <div className="container" data-aos="fade-up" data-aos-offset="0">
+                    <p className={styles.eyebrow}>Let&apos;s talk about your website</p>
+                    <h1 id="contact-heading">Contact Me</h1>
+                    <p>If you&apos;re thinking about a website, whether it&apos;s your first one, a refresh, or just an idea you want to talk through, feel free to get in touch or request a call back.</p>
+                    <p>Ask about the &pound;39/month website package or tell me about a larger project.</p>
+                </div>
+            </section>
+            <section className={styles.contactSection} aria-labelledby="form-heading">
+                <div className={"container " + styles.contactGrid}>
+                    <aside className={"surface-dark " + styles.contactDetails} aria-labelledby="direct-heading" data-aos="fade-right">
+                        <p className={styles.eyebrow}>A conversation to get started</p>
+                        <h2 id="direct-heading">Prefer to contact me directly?</h2>
+                        <dl className={styles.detailsList}>
+                            <dt>Email:</dt>
+                            <dd><a href="mailto:kyle@kmweb.co.uk">kyle@kmweb.co.uk</a></dd>
+                            <dt>Phone/Text:</dt>
+                            <dd><a href="tel:07766082304">07766 082304</a></dd>
+                        </dl>
+                        <p>You can also use the form to request a call back. Just include your phone number and select the callback option.</p>
+                        <p className={styles.detailsNote}>No pressure, just a conversation about what you need.</p>
+                    </aside>
+                    <div className={styles.formCard} data-aos="fade-left">
+                        <h2 id="form-heading">Contact Form</h2>
+                        <p>Get in touch or request a call back.</p>
+                        <p id="contactMethodHelp" className={styles.helpText}>Name and at least one contact method are required. A phone number is needed for a call back. Message is optional.</p>
+                        <noscript><p>The form needs JavaScript to send an enquiry. You can use the email or phone links to contact me directly.</p></noscript>
+                        <Form ref={formRef} noValidate onSubmit={handleSubmit} aria-describedby="contactMethodHelp">
+                            <div id="formStatus" className={styles.status} data-status={status.kind} role="status" aria-live="polite" aria-atomic="true">
+                                {status.text}
+                                {status.kind === "failure" && <> <a href="mailto:kyle@kmweb.co.uk">Email me directly</a>.</>}
+                            </div>
+                            <fieldset disabled={sending} aria-busy={sending} className={styles.fields}>
+                                <div className={styles.formGrid}>
+                                    <Form.Group controlId="formName" className={styles.fullWidth}>
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control name="name" type="text" autoComplete="name" placeholder="Enter your name" value={name} onChange={(e) => update(setName, e.target.value)} required isInvalid={Boolean(errors.name)} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "formNameError" : undefined} />
+                                        {errors.name && <Form.Control.Feedback type="invalid" id="formNameError">{errors.name}</Form.Control.Feedback>}
+                                    </Form.Group>
+                                    <Form.Group controlId="formEmail">
+                                        <Form.Label>Email address</Form.Label>
+                                        <Form.Control name="email" type="email" autoComplete="email" inputMode="email" placeholder="Enter email" value={email} onChange={(e) => update(setEmail, e.target.value)} isInvalid={Boolean(errors.email)} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "contactMethodHelp formEmailError" : "contactMethodHelp"} />
+                                        {errors.email && <Form.Control.Feedback type="invalid" id="formEmailError">{errors.email}</Form.Control.Feedback>}
+                                    </Form.Group>
+                                    <Form.Group controlId="formPhone">
+                                        <Form.Label>Phone {requestCallback ? "(Required for callback)" : ""}</Form.Label>
+                                        <Form.Control name="phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="Enter phone number" value={phone} onChange={(e) => update(setPhone, e.target.value)} required={requestCallback} isInvalid={Boolean(errors.phone)} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "contactMethodHelp formPhoneError" : "contactMethodHelp"} />
+                                        {errors.phone && <Form.Control.Feedback type="invalid" id="formPhoneError">{errors.phone}</Form.Control.Feedback>}
+                                    </Form.Group>
+                                    <Form.Group controlId="formMessage" className={styles.fullWidth}>
+                                        <Form.Label>Message</Form.Label>
+                                        <Form.Control name="message" as="textarea" rows={5} placeholder="Enter your message" value={message} onChange={(e) => update(setMessage, e.target.value)} />
+                                    </Form.Group>
+                                </div>
+                                <Form.Group controlId="formCallback" className={styles.callback}>
+                                    <Form.Check name="requestCallback" id="formCallback" type="checkbox" label="Request a Call Back" checked={requestCallback} onChange={(e) => update(setRequestCallback, e.target.checked)} aria-describedby="contactMethodHelp" />
                                 </Form.Group>
-
-                                <Form.Group
-                                    className="mb-3"
-                                    controlId="formEmail">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control
-                                        type="email"
-                                        placeholder="Enter email"
-                                        value={email}
-                                        onChange={(e) =>
-                                            setEmail(e.target.value)
-                                        }
-                                        isInvalid={
-                                            validated &&
-                                            ((email &&
-                                                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-                                                    email,
-                                                )) ||
-                                                (!email && !phone) ||
-                                                (!email &&
-                                                    requestCallback &&
-                                                    !phone))
-                                        }
-                                    />
-                                    <Form.Control.Feedback type="invalid">
-                                        {!email && !phone
-                                            ? "Please provide an email or phone number"
-                                            : "Enter a valid email"}
-                                    </Form.Control.Feedback>
-                                </Form.Group>
-
-                                <Form.Group
-                                    className="mb-3"
-                                    controlId="formPhone">
-                                    <Form.Label>
-                                        Phone{" "}
-                                        {requestCallback
-                                            ? "(Required for callback)"
-                                            : ""}
-                                    </Form.Label>
-                                    <Form.Control
-                                        type="tel"
-                                        placeholder="Enter phone number"
-                                        value={phone}
-                                        onChange={(e) =>
-                                            setPhone(e.target.value)
-                                        }
-                                        isInvalid={
-                                            validated &&
-                                            ((phone && !/^\d+$/.test(phone)) ||
-                                                (!phone && !email) ||
-                                                (!phone && requestCallback))
-                                        }
-                                    />
-                                    <Form.Control.Feedback type="invalid">
-                                        {!phone && requestCallback
-                                            ? "Phone is required to request a call back"
-                                            : !phone && !email
-                                              ? "Please provide a phone number or email"
-                                              : "Phone must contain only numbers"}
-                                    </Form.Control.Feedback>
-                                </Form.Group>
-
-                                <Form.Group
-                                    className="mb-3"
-                                    controlId="formMessage">
-                                    <Form.Label>Message</Form.Label>
-                                    <Form.Control
-                                        as="textarea"
-                                        rows={3}
-                                        placeholder="Enter your message"
-                                        value={message}
-                                        onChange={(e) =>
-                                            setMessage(e.target.value)
-                                        }
-                                    />
-                                </Form.Group>
-                                <Form.Group
-                                    className="my-4 d-flex justify-content-center"
-                                    controlId="formCallback">
-                                    <Form.Check
-                                        type="checkbox"
-                                        label="Request a Call Back"
-                                        checked={requestCallback}
-                                        onChange={(e) =>
-                                            setRequestCallback(e.target.checked)
-                                        }
-                                    />
-                                </Form.Group>
-
-                                <Row>
-                                    <Col className="text-center my-4">
-                                        <Button
-                                            variant="primary"
-                                            type="submit"
-                                            disabled={sending}
-                                            className={styles.SubmitButton}>
-                                            {sending ? "Sending..." : "Submit"}
-                                        </Button>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col className="text-center my-3">
-                                        <p className="m-0">
-                                            <small>
-                                                By sending this form, you agree
-                                                to my{" "}
-                                                <u>
-                                                    <Link href="/privacy">
-                                                        Privacy Policy
-                                                    </Link>
-                                                </u>
-                                                .
-                                            </small>
-                                        </p>
-                                    </Col>
-                                </Row>
-                            </Form>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+                                <Button variant="primary" type="submit" disabled={sending} className={styles.submitButton}>{sending ? "Sending..." : "Submit"}</Button>
+                            </fieldset>
+                            <p className={styles.privacyNote}>By sending this form, you agree to my <Link href="/privacy/">Privacy Policy</Link>.</p>
+                        </Form>
+                    </div>
+                </div>
+            </section>
+            <ContactAOS />
+        </div>
     );
-};
-
-export default ContactPage;
+}

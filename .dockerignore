@@ -1,0 +1,22 @@
+# Only send inputs required to build the static website.
+**
+!package.json
+!package-lock.json
+!next.config.mjs
+!next-sitemap.config.js
+!jsconfig.json
+!src/
+!src/**
+!public/
+!public/**
+!scripts/
+!scripts/**
+!nginx.conf
+!Dockerfile
+
+# Never include environment files, including within allowed directories.
+**/.env
+**/.env.*
+**/*.pem
+**/node_modules
+**/.git

@@ -18,11 +18,23 @@ const useClickOutsideToggle = () => {
             }
         };
 
-        document.addEventListener("mouseup", handleClickOutside);
+        document.addEventListener("pointerdown", handleClickOutside);
         return () => {
-            document.removeEventListener("mouseup", handleClickOutside);
+            document.removeEventListener("pointerdown", handleClickOutside);
         };
     }, []);
+
+    useEffect(() => {
+        if (!expanded) return;
+        const handleEscape = (event) => {
+            if (event.key === "Escape") {
+                setExpanded(false);
+                ref.current?.querySelector(".navbar-toggler")?.focus();
+            }
+        };
+        document.addEventListener("keydown", handleEscape);
+        return () => document.removeEventListener("keydown", handleEscape);
+    }, [expanded]);
 
     return { expanded, setExpanded, ref };
 };

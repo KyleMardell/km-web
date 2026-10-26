@@ -4,6 +4,7 @@ import "./globals.css";
 import "aos/dist/aos.css"; 
 import NavBar from "./components/NavBar";
 import PageFooter from "./components/PageFooter";
+import { siteName, siteUrl } from "./lib/seo";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -20,34 +21,41 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-    metadataBase: new URL("https://kmweb.co.uk"),
+    metadataBase: new URL(siteUrl),
     robots: {
         index: true,
         follow: true,
     },
     title: {
-        default: "Kyle Mardell | Freelance Web Developer in Manchester",
-        template: "%s | Kyle Mardell",
+        default: "Freelance Web Developer in Manchester | KM Web",
+        template: "%s | KM Web",
     },
     description:
         "I design and build custom websites for small and local businesses. Based in Manchester, I handle everything from setup and hosting to launch and support.",
-    openGraph: {
-        title: "Kyle Mardell | Freelance Web Developer in Manchester",
-        description:
-            "I design and build custom websites for small and local businesses. Based in Manchester, I handle everything from setup and hosting to launch and support.",
-        url: "https://kmweb.co.uk",
-        siteName: "Kyle Mardell",
-        locale: "en_GB",
-        type: "website",
-    },
+};
+
+const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteUrl}#organization`,
+    name: siteName,
+    url: siteUrl,
+    logo: new URL("images/kmweb-logo.webp", siteUrl).href,
+    email: "kyle@kmweb.co.uk",
+    telephone: "+447766082304",
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${inter.variable} ${jakarta.variable}`}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }}
+                />
+                <a className="skip-link" href="#main-content">Skip to content</a>
                 <NavBar />
-                <main>{children}</main>
+                <main id="main-content" tabIndex={-1}>{children}</main>
                 <PageFooter />
             </body>
         </html>

@@ -29,6 +29,21 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Docker / CapRover static deployment
+
+The repository's `captain-definition` uses the root Dockerfile. Build from the
+repository root: `docker build -t km-web .`.
+
+The Node build stage installs locked dependencies with `npm ci` and runs
+`npm run build`, including sitemap generation and the static export compatibility
+step. It needs network access for npm and the existing Google Fonts build step.
+No locally generated `out/` directory is required or copied into the image.
+
+Only the fresh `out/` contents and the Nginx configuration enter the final Nginx
+image. Nginx serves port 80 and preserves the existing trailing-slash routes.
+The Docker context excludes environment files, Git data and local build outputs.
+Do not deploy this export using `next start`.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
