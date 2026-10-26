@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import NavBar from "./components/NavBar";
 import PageFooter from "./components/PageFooter";
 import { siteName, siteUrl } from "./lib/seo";
+import { socialLinks } from "./lib/social";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -43,6 +44,7 @@ const organization = {
     logo: new URL("images/kmweb-logo.webp", siteUrl).href,
     email: "kyle@kmweb.co.uk",
     telephone: "+447766082304",
+    sameAs: socialLinks.map(({ url }) => url),
 };
 
 export default function RootLayout({ children }) {
